@@ -72,6 +72,8 @@ After building, run the executable:
 - WASD: Move forward/backward, strafe left/right
 - Space: Move up
 - Left Control: Move down
+- Q : Decrease Movement Speed
+- E : Increase Movement Speed
 - Left Shift: Hold to sprint (move faster)
 - Mouse: Look around (when cursor is hidden)
 - C: Toggle mouse cursor visibility
