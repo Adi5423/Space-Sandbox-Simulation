@@ -199,17 +199,17 @@ void Grid::generateGrid(float /*step*/) {
 void Grid::generateAxes() {
     axesVertices.clear();
     
-    // Define the size of the world gizmo
-    float gizmoSize = 5.0f; // Size of the world gizmo
+    // Define the size of the world gizmo and colored axes
+    float gizmoSize = 5.0f; // Size of the grey world gizmo
+    float coloredAxesSize = 10.0f; // Size of the colored XYZ axes
     
-    // X-axis (Red)
-    // Main axis line
+    // Existing Grey Axes with Arrows
+    // X-axis (Grey)
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     
-    // X-axis arrow
     axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.5f); axesVertices.push_back(0.0f);
@@ -220,14 +220,15 @@ void Grid::generateAxes() {
     axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f);
     axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     
-    // Y-axis (Green)
-    // Main axis line
+    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
+    
+    // Y-axis (Grey)
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
     
-    // Y-axis arrow
     axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.5f); axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.0f);
@@ -238,14 +239,15 @@ void Grid::generateAxes() {
     axesVertices.push_back(-0.5f); axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
     
-    // Z-axis (Blue)
-    // Main axis line
+    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
+    
+    // Z-axis (Grey)
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
     
-    // Z-axis arrow
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
     axesVertices.push_back(0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
@@ -256,6 +258,28 @@ void Grid::generateAxes() {
     axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
     
+    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
+    
+    // New Colored XYZ Axes
+    // X-axis (Red)
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Origin
+    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Red color
+    axesVertices.push_back(coloredAxesSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // End of X axis
+    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Red color
+
+    // Y-axis (Green)
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Origin
+    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); // Green color
+    axesVertices.push_back(0.0f); axesVertices.push_back(coloredAxesSize); axesVertices.push_back(0.0f); // End of Y axis
+    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); // Green color
+
+    // Z-axis (Blue)
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Origin
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); // Blue color
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(coloredAxesSize); // End of Z axis
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); // Blue color
+
     updateBuffers();
 }
 
