@@ -5,6 +5,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <iomanip>
+#include <sstream>
 
 Renderer::Renderer(GLFWwindow* window) : window(window) {
     // Get window dimensions
@@ -13,12 +15,20 @@ Renderer::Renderer(GLFWwindow* window) : window(window) {
     // Enable depth testing
     glEnable(GL_DEPTH_TEST);
     
-    // Create grid
+    // Create grid and text renderer
     grid = new Grid(100.0f, 1.0f);
+    textRenderer = new TextRenderer(width, height);
+    
+    // Initialize text renderer
+    if (!textRenderer->init()) {
+        std::cerr << "Warning: Failed to initialize text renderer" << std::endl;
+    }
 }
 
 Renderer::~Renderer() {
     delete grid;
+    delete textRenderer;
+    glDeleteProgram(shaderProgram);
 }
 
 bool Renderer::initialize() {
@@ -132,11 +142,38 @@ void Renderer::render(const World& world) {
     }
 }
 
-void Renderer::render(const glm::mat4& view, const glm::mat4& projection) {
+void Renderer::render(const glm::mat4& view, const glm::mat4& projection, const glm::vec3& cameraPos) {
     clear();
     
     // Render grid
-    grid->render(view, projection);
+    grid->render(view, projection, cameraPos);
+    
+    // Disable depth testing for text rendering
+    glDisable(GL_DEPTH_TEST);
+
+    // Format camera position for display
+    std::stringstream ss;
+    ss << std::fixed << std::setprecision(2);
+    ss << "X: " << cameraPos.x << " Y: " << cameraPos.y << " Z: " << cameraPos.z;
+    
+    // Calculate text position (top right corner with padding)
+    float paddingRight = 20.0f; // Fixed padding from the right edge
+    float paddingTop = 20.0f; // Padding from the top edge
+    float textScale = 1.5f;  // Increased scale for better visibility
+    // The estimatedTextWidth is not needed with this positioning approach
+    // float estimatedTextWidth = ss.str().length() * 8.0f * textScale; // Estimate width based on character count
+
+    // Render coordinates in top right corner with padding
+    textRenderer->renderText(
+        ss.str(),
+        width - paddingRight - textRenderer->getTextWidth(ss.str(), textScale), // Position based on calculated width and right padding
+        height - paddingTop,
+        textScale,
+        glm::vec3(1.0f, 1.0f, 1.0f)
+    );
+
+    // Re-enable depth testing
+    glEnable(GL_DEPTH_TEST);
 }
 
 void Renderer::renderMesh(const Mesh& mesh, const Vector& position, const Vector& scale) {
@@ -159,6 +196,15 @@ void Renderer::updateViewMatrix(const Camera& camera) {
     glm::vec3 up(camera.getUp().x, camera.getUp().y, camera.getUp().z);
     
     glm::mat4 view = glm::lookAt(pos, target, up);
+    memcpy(viewMatrix, glm::value_ptr(view), sizeof(viewMatrix));
+}
+
+void Renderer::updateViewMatrix(const glm::vec3& cameraPos) {
+    glm::mat4 view = glm::lookAt(
+        cameraPos,
+        cameraPos + glm::vec3(0.0f, 0.0f, -1.0f),  // Looking down the negative Z axis
+        glm::vec3(0.0f, 1.0f, 0.0f)  // Up vector
+    );
     memcpy(viewMatrix, glm::value_ptr(view), sizeof(viewMatrix));
 }
 

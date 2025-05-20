@@ -2,6 +2,7 @@
 #include "GLFW/glfw3.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include "Renderer.h"
 #include "World.h"
@@ -18,13 +19,16 @@ static double lastY = windowHeight / 2.0;
 static bool firstMouse = true;
 static float yaw = -90.0f; // Yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right
 static float pitch = 0.0f;
-static glm::vec3 cameraPos = glm::vec3(0.0f, 10.0f, 10.0f);
+static glm::vec3 cameraPos = glm::vec3(0.0f, 5.0f, 10.0f);
 static glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f); // Initial direction vector pointing forward
 static glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 static float baseCameraSpeed = 2.5f; // Base speed
 static float cameraSpeed = baseCameraSpeed; // Current speed
 static float sprintMultiplier = 5.0f; // Sprint speed multiplier
 static float cameraSensitivity = 0.1f;
+static float speedMultiplier = 1.0f;
+static bool eKeyPressed = false;
+static bool qKeyPressed = false;
 
 // Timing
 float deltaTime = 0.0f; // Time between current frame and last frame
@@ -78,12 +82,14 @@ void mouseCallback(GLFWwindow* /*window*/, double xpos, double ypos) {
 int main() {
     // Initialize GLFW
     if (!glfwInit()) {
+        std::cerr << "Failed to initialize GLFW" << std::endl;
         return -1;
     }
 
     // Create window
     GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "AstroSandbox", NULL, NULL);
     if (!window) {
+        std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
     }
@@ -116,12 +122,30 @@ int main() {
         lastFrame = currentFrame;
 
         // Handle input
-        float currentMoveSpeed = baseCameraSpeed;
+        float currentMoveSpeed = baseCameraSpeed * speedMultiplier;
         if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
             currentMoveSpeed *= sprintMultiplier;
         }
         float velocity = currentMoveSpeed * deltaTime;
 
+        // Speed control with E and Q
+        if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS && !eKeyPressed) {
+            speedMultiplier *= 1.5f;
+            eKeyPressed = true;
+        }
+        if (glfwGetKey(window, GLFW_KEY_E) == GLFW_RELEASE) {
+            eKeyPressed = false;
+        }
+
+        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS && !qKeyPressed) {
+            speedMultiplier /= 1.5f;
+            qKeyPressed = true;
+        }
+        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_RELEASE) {
+            qKeyPressed = false;
+        }
+
+        // Movement controls
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
             cameraPos += velocity * cameraFront;
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
@@ -153,15 +177,11 @@ int main() {
             cKeyPressed = false;
         }
 
-        // Speed adjustment (optional: add '+' and '-' key handling here)
-        // Example: if (glfwGetKey(window, GLFW_KEY_EQUAL) == GLFW_PRESS) baseCameraSpeed += 0.1f;
-        // Example: if (glfwGetKey(window, GLFW_KEY_MINUS) == GLFW_PRESS && baseCameraSpeed > 0.1f) baseCameraSpeed -= 0.1f;
-
         // Calculate view matrix using cameraFront
         glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
         // Render
-        renderer.render(view, projection);
+        renderer.render(view, projection, cameraPos);
 
         // Swap buffers and poll events
         glfwSwapBuffers(window);

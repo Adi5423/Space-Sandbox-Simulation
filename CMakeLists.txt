@@ -13,6 +13,7 @@ find_package(OpenGL REQUIRED)
 
 # Include directories
 include_directories(
+    ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/include
     ${GLM_DIR}
     ${OPENGL_INCLUDE_DIR}
@@ -30,6 +31,7 @@ set(SOURCES
     src/Body.cpp
     src/Simulator.cpp
     src/Grid.cpp
+    src/TextRenderer.cpp
     src/glad.c
 )
 

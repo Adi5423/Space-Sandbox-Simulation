@@ -5,7 +5,21 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <cmath> // For std::abs
 
-Grid::Grid(float size, float step) : gridSize(size), gridStep(step), needsUpdate(true) {
+Grid::Grid(float size, float step) 
+    : gridVAO(0), gridVBO(0),
+      axesVAO(0), axesVBO(0),
+      shaderProgram(0),
+      cameraPosLoc(-1), gridSpacingLoc(-1),
+      majorLineSpacingLoc(-1), majorLineColorLoc(-1),
+      minorLineColorLoc(-1), fadeDistanceLoc(-1),
+      gridVertices(), axesVertices(),
+      gridSize(size), gridStep(step),
+      currentGridSpacing(step), majorLineSpacing(10.0f),
+      majorLineColor(0.7f, 0.7f, 0.7f, 0.5f),
+      minorLineColor(0.5f, 0.5f, 0.5f, 0.3f),
+      fadeDistance(100.0f),
+      needsUpdate(true) {
+    
     // Create and compile shaders
     std::string vertexCode, fragmentCode;
     std::ifstream vShaderFile, fShaderFile;
@@ -15,7 +29,6 @@ Grid::Grid(float size, float step) : gridSize(size), gridStep(step), needsUpdate
     
     if (!vShaderFile.is_open() || !fShaderFile.is_open()) {
         std::cerr << "Failed to open shader files" << std::endl;
-        // Exit or handle error appropriately, as without shaders, nothing will render
         shaderProgram = 0; // Indicate shader loading failed
         return;
     }
@@ -30,24 +43,23 @@ Grid::Grid(float size, float step) : gridSize(size), gridStep(step), needsUpdate
     const char* vShaderCode = vertexCode.c_str();
     const char* fShaderCode = fragmentCode.c_str();
     
-    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vShaderCode, NULL);
     glCompileShader(vertexShader);
     
     // Check for vertex shader compile errors
-    GLint success;
-    GLchar infoLog[512];
+    int success;
+    char infoLog[512];
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
         std::cerr << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
         glDeleteShader(vertexShader);
         shaderProgram = 0; // Indicate shader loading failed
-        // Exit or handle error
         return;
     }
     
-    GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fShaderCode, NULL);
     glCompileShader(fragmentShader);
     
@@ -57,9 +69,8 @@ Grid::Grid(float size, float step) : gridSize(size), gridStep(step), needsUpdate
         glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
         std::cerr << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
         glDeleteShader(fragmentShader);
-        glDeleteShader(vertexShader); // Also delete vertex shader if fragment fails
+        glDeleteShader(vertexShader);
         shaderProgram = 0; // Indicate shader loading failed
-        // Exit or handle error
         return;
     }
     
@@ -77,21 +88,22 @@ Grid::Grid(float size, float step) : gridSize(size), gridStep(step), needsUpdate
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
         shaderProgram = 0; // Indicate shader loading failed
-        // Exit or handle error
         return;
     }
     
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
     
-    // Initialize VAOs and VBOs to 0 before generation
-    gridVAO = 0;
-    gridVBO = 0;
-    axesVAO = 0;
-    axesVBO = 0;
-
-    // Generate grid and axes geometry (buffers are updated within these calls)
-    generateGrid(size, step);
+    // Get uniform locations
+    cameraPosLoc = glGetUniformLocation(shaderProgram, "cameraPos");
+    gridSpacingLoc = glGetUniformLocation(shaderProgram, "gridSpacing");
+    majorLineSpacingLoc = glGetUniformLocation(shaderProgram, "majorLineSpacing");
+    majorLineColorLoc = glGetUniformLocation(shaderProgram, "majorLineColor");
+    minorLineColorLoc = glGetUniformLocation(shaderProgram, "minorLineColor");
+    fadeDistanceLoc = glGetUniformLocation(shaderProgram, "fadeDistance");
+    
+    // Generate grid and axes geometry
+    generateGrid(step);
     generateAxes();
 }
 
@@ -106,62 +118,145 @@ Grid::~Grid() {
 void Grid::updateSize(float size) {
     gridSize = size;
     needsUpdate = true;
-    generateGrid(gridSize, gridStep); // generateGrid calls updateBuffers
-    generateAxes(); // generateAxes calls updateBuffers
+    generateGrid(gridStep);
+    generateAxes();
 }
 
 void Grid::updateStep(float step) {
     gridStep = step;
     needsUpdate = true;
-    generateGrid(gridSize, gridStep); // generateGrid calls updateBuffers
-    generateAxes(); // generateAxes calls updateBuffers
+    generateGrid(gridStep);
+    generateAxes();
 }
 
-void Grid::generateGrid(float size, float step) {
-    gridVertices.clear();
+void Grid::setMajorLineSpacing(float spacing) {
+    majorLineSpacing = spacing;
+    needsUpdate = true;
+}
+
+void Grid::setMajorLineColor(const glm::vec4& color) {
+    majorLineColor = color;
+    needsUpdate = true;
+}
+
+void Grid::setMinorLineColor(const glm::vec4& color) {
+    minorLineColor = color;
+    needsUpdate = true;
+}
+
+void Grid::setFadeDistance(float distance) {
+    fadeDistance = distance;
+    needsUpdate = true;
+}
+
+void Grid::setGridSpacing(float spacing) {
+    currentGridSpacing = spacing;
+    needsUpdate = true;
+}
+
+void Grid::updateCameraPosition(const glm::vec3& cameraPos) {
+    updateGridSpacing(cameraPos);
+}
+
+void Grid::updateGridSpacing(const glm::vec3& cameraPos) {
+    // Adjust grid spacing based on camera height
+    float height = std::abs(cameraPos.y);
+    float newSpacing = gridStep;
     
-    // Generate grid lines with a uniform grey color
-    for (float i = -size; i <= size; i += step) {
-        glm::vec3 color = glm::vec3(0.5f, 0.5f, 0.5f); // Grey color
-        
-        // Lines parallel to X-axis
-        gridVertices.push_back(-size); gridVertices.push_back(0.0f); gridVertices.push_back(i);
-        gridVertices.push_back(color.r); gridVertices.push_back(color.g); gridVertices.push_back(color.b);
-        gridVertices.push_back(size); gridVertices.push_back(0.0f); gridVertices.push_back(i);
-        gridVertices.push_back(color.r); gridVertices.push_back(color.g); gridVertices.push_back(color.b);
-        
-        // Lines parallel to Z-axis
-        gridVertices.push_back(i); gridVertices.push_back(0.0f); gridVertices.push_back(-size);
-        gridVertices.push_back(color.r); gridVertices.push_back(color.g); gridVertices.push_back(color.b);
-        gridVertices.push_back(i); gridVertices.push_back(0.0f); gridVertices.push_back(size);
-        gridVertices.push_back(color.r); gridVertices.push_back(color.g); gridVertices.push_back(color.b);
+    if (height > 100.0f) {
+        newSpacing = gridStep * 10.0f;
+    } else if (height > 50.0f) {
+        newSpacing = gridStep * 5.0f;
+    } else if (height > 20.0f) {
+        newSpacing = gridStep * 2.0f;
     }
     
-    updateBuffers(); // Ensure buffers are updated after generating vertices
+    if (newSpacing != currentGridSpacing) {
+        currentGridSpacing = newSpacing;
+        needsUpdate = true;
+    }
+}
+
+void Grid::generateGrid(float /*step*/) {
+    gridVertices.clear();
+    
+    // Generate a quad that's centered on the camera's position
+    // Using a fixed radius of 1000 units
+    float quadSize = 1000.0f; // Radius around camera
+    
+    // Position and color for each vertex
+    gridVertices = {
+        // Position (x, y, z) and Color (r, g, b)
+        -quadSize, 0.0f, -quadSize,  0.5f, 0.5f, 0.5f,
+         quadSize, 0.0f, -quadSize,  0.5f, 0.5f, 0.5f,
+         quadSize, 0.0f,  quadSize,  0.5f, 0.5f, 0.5f,
+        -quadSize, 0.0f,  quadSize,  0.5f, 0.5f, 0.5f
+    };
+    
+    updateBuffers();
 }
 
 void Grid::generateAxes() {
     axesVertices.clear();
     
+    // Define the size of the world gizmo
+    float gizmoSize = 5.0f; // Size of the world gizmo
+    
     // X-axis (Red)
+    // Main axis line
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(gridSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    
+    // X-axis arrow
+    axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.5f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    
+    axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f);
     axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     
     // Y-axis (Green)
+    // Main axis line
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(gridSize); axesVertices.push_back(0.0f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
+    
+    // Y-axis arrow
+    axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(0.5f); axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
+    
+    axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
+    axesVertices.push_back(-0.5f); axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
     
     // Z-axis (Blue)
+    // Main axis line
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gridSize);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
     axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
     
-    updateBuffers(); // Ensure buffers are updated after generating vertices
+    // Z-axis arrow
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
+    axesVertices.push_back(0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
+    
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
+    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
+    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
+    
+    updateBuffers();
 }
 
 void Grid::updateBuffers() {
@@ -202,8 +297,8 @@ void Grid::updateBuffers() {
     needsUpdate = false;
 }
 
-void Grid::render(const glm::mat4& view, const glm::mat4& projection) {
-    if (shaderProgram == 0) return; // Don't render if shader loading failed
+void Grid::render(const glm::mat4& view, const glm::mat4& projection, const glm::vec3& cameraPos) {
+    if (shaderProgram == 0) return;
 
     if (needsUpdate) {
         updateBuffers();
@@ -220,20 +315,78 @@ void Grid::render(const glm::mat4& view, const glm::mat4& projection) {
     GLint viewLoc = glGetUniformLocation(shaderProgram, "view");
     GLint projLoc = glGetUniformLocation(shaderProgram, "projection");
     
-    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(glm::mat4(1.0f)));
+    // Create a model matrix that centers the grid on the camera's XZ position
+    // Snap to grid spacing to prevent jittering
+    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::translate(model, glm::vec3(
+        std::floor(cameraPos.x / currentGridSpacing) * currentGridSpacing,
+        0.0f,
+        std::floor(cameraPos.z / currentGridSpacing) * currentGridSpacing
+    ));
+    
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
     
-    // Render grid
-    glLineWidth(1.0f);
+    // Set custom uniforms
+    glUniform3fv(cameraPosLoc, 1, glm::value_ptr(cameraPos));
+    glUniform1f(gridSpacingLoc, currentGridSpacing);
+    glUniform1f(majorLineSpacingLoc, majorLineSpacing);
+    glUniform4fv(majorLineColorLoc, 1, glm::value_ptr(majorLineColor));
+    glUniform4fv(minorLineColorLoc, 1, glm::value_ptr(minorLineColor));
+    
+    // Disable depth writing but keep depth testing
+    glDepthMask(GL_FALSE);
+    
+    // Enable depth testing
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
+    
+    // Render grid quad
     glBindVertexArray(gridVAO);
-    glDrawArrays(GL_LINES, 0, gridVertices.size() / 6); // Note: size / 6 because each vertex has 3 pos + 3 color
+    glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+    
+    // Re-enable depth writing for axes
+    glDepthMask(GL_TRUE);
     
     // Render axes with thicker lines
-    glLineWidth(2.0f);
+    glLineWidth(3.0f);
     glBindVertexArray(axesVAO);
-    glDrawArrays(GL_LINES, 0, axesVertices.size() / 6); // Note: size / 6 because each vertex has 3 pos + 3 color
+    glDrawArrays(GL_LINES, 0, axesVertices.size() / 6);
     
     // Disable blending
     glDisable(GL_BLEND);
+}
+
+// Coordinate system functions
+glm::vec3 Grid::snapToGrid(const glm::vec3& worldPos) const {
+    // Project onto XZ plane
+    float u = worldPos.x;
+    float v = worldPos.z;
+
+    // Compute cell indices
+    int i = static_cast<int>(std::floor(u / currentGridSpacing));
+    int j = static_cast<int>(std::floor(v / currentGridSpacing));
+
+    // Reconstruct snapped position
+    glm::vec3 snapped;
+    snapped.x = i * currentGridSpacing;
+    snapped.y = worldPos.y;  // Preserve original height
+    snapped.z = j * currentGridSpacing;
+    return snapped;
+}
+
+glm::ivec2 Grid::worldToGridIndex(const glm::vec3& worldPos) const {
+    return glm::ivec2(
+        static_cast<int>(std::floor(worldPos.x / currentGridSpacing)),
+        static_cast<int>(std::floor(worldPos.z / currentGridSpacing))
+    );
+}
+
+glm::vec3 Grid::gridIndexToWorld(const glm::ivec2& gridIndex) const {
+    return glm::vec3(
+        gridIndex.x * currentGridSpacing,
+        0.0f,  // Default to ground plane
+        gridIndex.y * currentGridSpacing
+    );
 } 
