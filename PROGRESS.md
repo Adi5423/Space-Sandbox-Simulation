@@ -3,6 +3,9 @@
 ## Project Overview
 AstroSandbox is a 3D space simulation project that aims to provide an interactive environment for visualizing and experimenting with space physics concepts. The project uses OpenGL for rendering and implements a custom physics engine for space simulations.
 
+## Demo Video
+Check out the [Coordinate System Demo](demo_samples/Coordinate%20System%20Demo.mp4) to see the current implementation in action.
+
 ## Completed Features
 
 ### Build System
@@ -87,4 +90,15 @@ AstroSandbox is a 3D space simulation project that aims to provide an interactiv
 5. Implement particle systems for visual effects
 
 ## Contributing
-We welcome contributions! Please check the README.md for contribution guidelines and the current development status in this file. 
+We welcome contributions! Please check the README.md for contribution guidelines and the current development status in this file.
+
+## Current Implementation Screenshots
+
+![3D Coordinate System View](demo_samples/Image_Sample-1.png)
+*Current implementation of the 3D coordinate system with grid*
+
+![Camera Movement Demo](demo_samples/Image_Sample-2.png)
+*Interactive camera movement demonstration*
+
+![Text Rendering Example](demo_samples/Image_Sample-3.png)
+*Text rendering and UI elements implementation* 

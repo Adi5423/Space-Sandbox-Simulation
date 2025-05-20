@@ -4,7 +4,7 @@ A lightweight space simulation project that demonstrates basic orbital mechanics
 
 ## Demo Video
 
-Check out the [Coordinate System Demo](Coordinate%20System%20Demo.mp4) to see the project in action, showcasing the 3D coordinate system, camera controls, and basic rendering features.
+Check out the [Coordinate System Demo](demo_samples/Coordinate%20System%20Demo.mp4) to see the project in action, showcasing the 3D coordinate system, camera controls, and basic rendering features.
 
 ## Prerequisites
 
@@ -23,7 +23,8 @@ P1_B1/
 ├── shaders/        # GLSL shaders
 ├── tests/          # Test files
 ├── docs/           # Documentation
-└── fonts/          # Font files for text rendering
+├── fonts/          # Font files for text rendering
+└── demo_samples/   # Demo videos and screenshots
 ```
 
 ## Features
@@ -98,4 +99,17 @@ See [PROGRESS.md](PROGRESS.md) for detailed development status and planned featu
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Screenshots
+
+Here are some screenshots showcasing the project's features:
+
+![3D Coordinate System View](demo_samples/Image_Sample-1.png)
+*3D Coordinate System with Grid*
+
+![Camera Movement Demo](demo_samples/Image_Sample-2.png)
+*Interactive Camera Movement*
+
+![Text Rendering Example](demo_samples/Image_Sample-3.png)
+*Text Rendering and UI Elements* 
