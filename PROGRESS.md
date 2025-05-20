@@ -14,6 +14,12 @@
 - [x] OpenGL rendering setup
 - [x] Window management
 - [x] Basic camera system
+- [x] Grid system with coordinate axes
+- [x] Responsive window and viewport
+- [x] Camera movement relative to facing direction
+- [x] Delta time for consistent movement speed
+- [x] Sprint functionality (Left Shift)
+- [x] Cursor toggle (C key)
 
 ### Project Structure
 - [x] Organized directory layout
@@ -33,7 +39,7 @@
 - [ ] Textures for celestial bodies
 - [ ] Lighting system
 - [ ] Particle effects
-- [ ] Improved camera controls
+- [ ] Improved camera controls (e.g., speed adjustment)
 
 ### User Interface
 - [ ] Simulation controls

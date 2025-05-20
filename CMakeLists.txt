@@ -29,6 +29,7 @@ set(SOURCES
     src/Mesh.cpp
     src/Body.cpp
     src/Simulator.cpp
+    src/Grid.cpp
     src/glad.c
 )
 

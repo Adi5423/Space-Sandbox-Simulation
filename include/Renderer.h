@@ -13,10 +13,11 @@
 #include "World.h"
 #include "Camera.h"
 #include "Mesh.h"
+#include "Grid.h"
 
 class Renderer {
 public:
-    Renderer(int width = 1280, int height = 720, const std::string& title = "AstroSandbox");
+    Renderer(GLFWwindow* window);
     ~Renderer();
 
     // Window management
@@ -27,6 +28,7 @@ public:
 
     // Rendering
     void render(const World& world);
+    void render(const glm::mat4& view, const glm::mat4& projection);
     void clear();
 
     // Getters
@@ -60,4 +62,6 @@ private:
     // Matrices
     float viewMatrix[16];
     float projMatrix[16];
+
+    Grid* grid;
 }; 

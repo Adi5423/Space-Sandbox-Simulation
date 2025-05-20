@@ -51,10 +51,12 @@ After building, run the executable:
 
 ## Controls
 
-- WASD: Move camera
-- Mouse: Look around
+- WASD: Move forward/backward, strafe left/right
 - Space: Move up
-- Left Shift: Move down
+- Left Control: Move down
+- Left Shift: Hold to sprint (move faster)
+- Mouse: Look around (when cursor is hidden)
+- C: Toggle mouse cursor visibility
 - ESC: Exit
 
 ## Dependencies

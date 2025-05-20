@@ -6,16 +6,19 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-Renderer::Renderer(int width, int height, const std::string& title)
-    : window(nullptr), width(width), height(height), title(title),
-      shaderProgram(0), vao(0), vbo(0), ebo(0) {
+Renderer::Renderer(GLFWwindow* window) : window(window) {
+    // Get window dimensions
+    glfwGetWindowSize(window, &width, &height);
+    
+    // Enable depth testing
+    glEnable(GL_DEPTH_TEST);
+    
+    // Create grid
+    grid = new Grid(100.0f, 1.0f);
 }
 
 Renderer::~Renderer() {
-    if (window) {
-        glfwDestroyWindow(window);
-    }
-    glfwTerminate();
+    delete grid;
 }
 
 bool Renderer::initialize() {
@@ -127,6 +130,13 @@ void Renderer::render(const World& world) {
             renderMesh(*mesh, body.position, Vector(1, 1, 1));
         }
     }
+}
+
+void Renderer::render(const glm::mat4& view, const glm::mat4& projection) {
+    clear();
+    
+    // Render grid
+    grid->render(view, projection);
 }
 
 void Renderer::renderMesh(const Mesh& mesh, const Vector& position, const Vector& scale) {
