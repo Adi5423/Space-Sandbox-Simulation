@@ -1,5 +1,8 @@
 # Project Progress
 
+## Project Overview
+AstroSandbox is a 3D space simulation project that aims to provide an interactive environment for visualizing and experimenting with space physics concepts. The project uses OpenGL for rendering and implements a custom physics engine for space simulations.
+
 ## Completed Features
 
 ### Build System
@@ -7,6 +10,7 @@
 - [x] GLFW library integration (MinGW build)
 - [x] Build scripts automation
 - [x] Cross-platform compatibility
+- [x] FreeType integration for text rendering
 
 ### Core Components
 - [x] Vector class implementation
@@ -20,12 +24,15 @@
 - [x] Delta time for consistent movement speed
 - [x] Sprint functionality (Left Shift)
 - [x] Cursor toggle (C key)
+- [x] Text rendering system
+- [x] Basic shader implementation
 
 ### Project Structure
 - [x] Organized directory layout
 - [x] Header/source separation
 - [x] Library management
 - [x] Build output organization
+- [x] Resource management (fonts, shaders)
 
 ## In Progress
 
@@ -34,18 +41,23 @@
 - [ ] Collision detection
 - [ ] Multiple body interactions
 - [ ] Orbital mechanics
+- [ ] Time dilation effects
 
 ### Graphics
 - [ ] Textures for celestial bodies
 - [ ] Lighting system
 - [ ] Particle effects
-- [ ] Improved camera controls (e.g., speed adjustment)
+- [ ] Improved camera controls
+- [ ] Post-processing effects
+- [ ] Skybox implementation
 
 ### User Interface
 - [ ] Simulation controls
 - [ ] Time manipulation
 - [ ] Debug visualization
 - [ ] Parameter adjustment
+- [ ] HUD for simulation data
+- [ ] Settings menu
 
 ## Planned Features
 
@@ -54,12 +66,15 @@
 - [ ] Multithreading support
 - [ ] Level of detail system
 - [ ] Rendering optimizations
+- [ ] GPU acceleration for physics
 
 ### Additional Features
 - [ ] Save/Load functionality
 - [ ] Multiple simulation scenarios
 - [ ] Sound effects
 - [ ] Tutorial system
+- [ ] Export/Import of simulation data
+- [ ] Network multiplayer support
 
 ## Known Issues
 - None currently tracked
@@ -68,4 +83,8 @@
 1. Implement advanced physics calculations
 2. Add basic UI controls
 3. Improve rendering quality
-4. Add save/load functionality 
+4. Add save/load functionality
+5. Implement particle systems for visual effects
+
+## Contributing
+We welcome contributions! Please check the README.md for contribution guidelines and the current development status in this file. 

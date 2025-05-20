@@ -1,12 +1,17 @@
 # AstroSandbox
 
-A lightweight space simulation project that demonstrates basic orbital mechanics and 3D rendering.
+A lightweight space simulation project that demonstrates basic orbital mechanics and 3D rendering using OpenGL. This project provides an interactive 3D environment for visualizing and experimenting with space physics concepts.
+
+## Demo Video
+
+Check out the [Coordinate System Demo](Coordinate%20System%20Demo.mp4) to see the project in action, showcasing the 3D coordinate system, camera controls, and basic rendering features.
 
 ## Prerequisites
 
 - CMake (version 3.10 or higher)
 - MinGW-w64 (for Windows)
 - Git
+- OpenGL 3.3+ compatible graphics card
 
 ## Project Structure
 ```
@@ -17,8 +22,20 @@ P1_B1/
 ├── src/            # Source files
 ├── shaders/        # GLSL shaders
 ├── tests/          # Test files
-└── docs/           # Documentation
+├── docs/           # Documentation
+└── fonts/          # Font files for text rendering
 ```
+
+## Features
+
+- 3D coordinate system visualization
+- Interactive camera controls
+- Grid system with customizable dimensions
+- Text rendering support
+- Responsive window management
+- Delta time-based movement
+- Sprint functionality
+- Cursor toggle for better control
 
 ## Building the Project
 
@@ -63,8 +80,9 @@ After building, run the executable:
 
 - GLFW 3.4
 - GLM
-- OpenGL
+- OpenGL 3.3+
 - GLAD
+- FreeType (for text rendering)
 
 ## Development Progress
 
