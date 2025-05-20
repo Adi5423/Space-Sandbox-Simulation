@@ -101,7 +101,7 @@ See [PROGRESS.md](PROGRESS.md) for detailed development status and planned featu
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE.txt) - see the LICENSE file for details.
 
 ## Screenshots
 
@@ -114,4 +114,5 @@ Here are some screenshots showcasing the project's features:
 *Interactive Camera Movement*
 
 ![Text Rendering Example](demo_samples/Image_Sample-3.png)
+*.*
 *Text Rendering and UI Elements* 
