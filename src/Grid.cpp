@@ -8,12 +8,11 @@
 
 Grid::Grid(float size, float step) 
     : gridVAO(0), gridVBO(0),
-      axesVAO(0), axesVBO(0),
       shaderProgram(0),
       cameraPosLoc(-1), gridSpacingLoc(-1),
       majorLineSpacingLoc(-1), majorLineColorLoc(-1),
       minorLineColorLoc(-1), fadeDistanceLoc(-1),
-      gridVertices(), axesVertices(),
+      gridVertices(),
       gridSize(size), gridStep(step),
       currentGridSpacing(step), majorLineSpacing(10.0f),
       majorLineColor(0.7f, 0.7f, 0.7f, 0.5f),
@@ -95,7 +94,7 @@ Grid::Grid(float size, float step)
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
     
-    // Get uniform locations
+    // Get uniform locations for grid shader
     cameraPosLoc = glGetUniformLocation(shaderProgram, "cameraPos");
     gridSpacingLoc = glGetUniformLocation(shaderProgram, "gridSpacing");
     majorLineSpacingLoc = glGetUniformLocation(shaderProgram, "majorLineSpacing");
@@ -103,16 +102,13 @@ Grid::Grid(float size, float step)
     minorLineColorLoc = glGetUniformLocation(shaderProgram, "minorLineColor");
     fadeDistanceLoc = glGetUniformLocation(shaderProgram, "fadeDistance");
     
-    // Generate grid and axes geometry
+    // Generate grid geometry
     generateGrid(step);
-    generateAxes();
 }
 
 Grid::~Grid() {
     glDeleteVertexArrays(1, &gridVAO);
     glDeleteBuffers(1, &gridVBO);
-    glDeleteVertexArrays(1, &axesVAO);
-    glDeleteBuffers(1, &axesVBO);
     glDeleteProgram(shaderProgram);
 }
 
@@ -120,14 +116,12 @@ void Grid::updateSize(float size) {
     gridSize = size;
     needsUpdate = true;
     generateGrid(gridStep);
-    generateAxes();
 }
 
 void Grid::updateStep(float step) {
     gridStep = step;
     needsUpdate = true;
     generateGrid(gridStep);
-    generateAxes();
 }
 
 void Grid::setMajorLineSpacing(float spacing) {
@@ -197,93 +191,6 @@ void Grid::generateGrid(float /*step*/) {
     updateBuffers();
 }
 
-void Grid::generateAxes() {
-    axesVertices.clear();
-    
-    // Define the size of the world gizmo and colored axes
-    float gizmoSize = 5.0f; // Size of the grey world gizmo
-    float coloredAxesSize = 10.0f; // Size of the colored XYZ axes
-    
-    // Existing Grey Axes with Arrows
-    // X-axis (Grey)
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    
-    axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.5f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    
-    axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    
-    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    
-    // Y-axis (Grey)
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
-    
-    axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.5f); axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
-    
-    axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(-0.5f); axesVertices.push_back(gizmoSize - 0.5f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f);
-    
-    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    
-    // Z-axis (Grey)
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    axesVertices.push_back(0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    
-    axesVertices.push_back(-0.5f); axesVertices.push_back(0.0f); axesVertices.push_back(gizmoSize - 0.5f);
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f);
-    
-    // New Colored XYZ Axes
-    // X-axis (Red)
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Origin
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Red color
-    axesVertices.push_back(coloredAxesSize); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // End of X axis
-    axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Red color
-
-    // Y-axis (Green)
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Origin
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); // Green color
-    axesVertices.push_back(0.0f); axesVertices.push_back(coloredAxesSize); axesVertices.push_back(0.0f); // End of Y axis
-    axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); axesVertices.push_back(0.0f); // Green color
-
-    // Z-axis (Blue)
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); // Origin
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); // Blue color
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(coloredAxesSize); // End of Z axis
-    axesVertices.push_back(0.0f); axesVertices.push_back(0.0f); axesVertices.push_back(1.0f); // Blue color
-
-    updateBuffers();
-}
-
 void Grid::updateBuffers() {
     // Update grid buffers
     if (gridVAO == 0) {
@@ -295,53 +202,42 @@ void Grid::updateBuffers() {
     glBindBuffer(GL_ARRAY_BUFFER, gridVBO);
     glBufferData(GL_ARRAY_BUFFER, gridVertices.size() * sizeof(float), gridVertices.data(), GL_STATIC_DRAW);
     
-    // Position attribute
+    // Position attribute for grid shader
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    // Color attribute
+    // Color attribute for grid shader
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
     
-    // Update axes buffers
-    if (axesVAO == 0) {
-        glGenVertexArrays(1, &axesVAO);
-        glGenBuffers(1, &axesVBO);
-    }
-    
-    glBindVertexArray(axesVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, axesVBO);
-    glBufferData(GL_ARRAY_BUFFER, axesVertices.size() * sizeof(float), axesVertices.data(), GL_STATIC_DRAW);
-    
-    // Position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // Color attribute
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
+    // Unbind VAO and VBO
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
     
     needsUpdate = false;
 }
 
 void Grid::render(const glm::mat4& view, const glm::mat4& projection, const glm::vec3& cameraPos) {
-    if (shaderProgram == 0) return;
+    if (shaderProgram == 0) return; // Cannot render grid without grid shader
 
     if (needsUpdate) {
         updateBuffers();
     }
 
-    glUseProgram(shaderProgram);
-    
-    // Enable blending for transparency
+    // Enable depth testing and blending
+    glEnable(GL_DEPTH_TEST);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    // Render grid
+    glUseProgram(shaderProgram);
+    glBindVertexArray(gridVAO);
     
-    // Set uniforms
+    // Set uniforms for grid shader
     GLint modelLoc = glGetUniformLocation(shaderProgram, "model");
     GLint viewLoc = glGetUniformLocation(shaderProgram, "view");
     GLint projLoc = glGetUniformLocation(shaderProgram, "projection");
     
     // Create a model matrix that centers the grid on the camera's XZ position
-    // Snap to grid spacing to prevent jittering
     glm::mat4 model = glm::mat4(1.0f);
     model = glm::translate(model, glm::vec3(
         std::floor(cameraPos.x / currentGridSpacing) * currentGridSpacing,
@@ -353,34 +249,23 @@ void Grid::render(const glm::mat4& view, const glm::mat4& projection, const glm:
     glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
     glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
     
-    // Set custom uniforms
+    // Set custom uniforms for grid shader
     glUniform3fv(cameraPosLoc, 1, glm::value_ptr(cameraPos));
     glUniform1f(gridSpacingLoc, currentGridSpacing);
     glUniform1f(majorLineSpacingLoc, majorLineSpacing);
     glUniform4fv(majorLineColorLoc, 1, glm::value_ptr(majorLineColor));
     glUniform4fv(minorLineColorLoc, 1, glm::value_ptr(minorLineColor));
     
-    // Disable depth writing but keep depth testing
+    // Disable depth writing but keep depth testing for grid
     glDepthMask(GL_FALSE);
     
-    // Enable depth testing
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
-    
     // Render grid quad
-    glBindVertexArray(gridVAO);
     glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
-    
-    // Re-enable depth writing for axes
-    glDepthMask(GL_TRUE);
-    
-    // Render axes with thicker lines
-    glLineWidth(3.0f);
-    glBindVertexArray(axesVAO);
-    glDrawArrays(GL_LINES, 0, axesVertices.size() / 6);
-    
-    // Disable blending
+
+    // Cleanup
     glDisable(GL_BLEND);
+    glDepthMask(GL_TRUE);
+    glBindVertexArray(0);
 }
 
 // Coordinate system functions

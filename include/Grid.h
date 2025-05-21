@@ -24,27 +24,24 @@ public:
     void setGridSpacing(float spacing);
 
 private:
-    void generateGrid(float size, float step);
-    void generateAxes();
+    void generateGrid(float step);
     void updateBuffers();
     void updateGridSpacing(const glm::vec3& cameraPos);
 
     // OpenGL objects
-    GLuint gridVAO, gridVBO;
-    GLuint axesVAO, axesVBO;
-    GLuint shaderProgram;
+    unsigned int gridVAO, gridVBO;
+    unsigned int shaderProgram;
     
     // Shader uniform locations
-    GLint cameraPosLoc;
-    GLint gridSpacingLoc;
-    GLint majorLineSpacingLoc;
-    GLint majorLineColorLoc;
-    GLint minorLineColorLoc;
-    GLint fadeDistanceLoc;
+    int cameraPosLoc;
+    int gridSpacingLoc;
+    int majorLineSpacingLoc;
+    int majorLineColorLoc;
+    int minorLineColorLoc;
+    int fadeDistanceLoc;
     
     // Vertex data
     std::vector<float> gridVertices;
-    std::vector<float> axesVertices;
     
     // Grid properties
     float gridSize;

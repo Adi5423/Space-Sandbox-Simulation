@@ -37,7 +37,7 @@ set(SOURCES
 )
 
 # Create executable
-add_executable(astro-sim ${SOURCES})
+add_executable(astro-sim WIN32 ${SOURCES})
 
 # Link libraries
 target_link_libraries(astro-sim
