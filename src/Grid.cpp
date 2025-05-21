@@ -1,4 +1,5 @@
 #include "Grid.h"
+#include "ResourceManager.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -24,8 +25,8 @@ Grid::Grid(float size, float step)
     std::string vertexCode, fragmentCode;
     std::ifstream vShaderFile, fShaderFile;
     
-    vShaderFile.open("shaders/grid.vert");
-    fShaderFile.open("shaders/grid.frag");
+    vShaderFile.open(ResourceManager::getResourcePath("shaders/grid.vert"));
+    fShaderFile.open(ResourceManager::getResourcePath("shaders/grid.frag"));
     
     if (!vShaderFile.is_open() || !fShaderFile.is_open()) {
         std::cerr << "Failed to open shader files" << std::endl;

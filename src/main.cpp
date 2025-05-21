@@ -7,6 +7,7 @@
 #include "Renderer.h"
 #include "World.h"
 #include "Simulator.h"
+#include "ResourceManager.h"
 
 // Global variables for window dimensions
 int windowWidth = 800;
@@ -79,7 +80,16 @@ void mouseCallback(GLFWwindow* /*window*/, double xpos, double ypos) {
     cameraFront = glm::normalize(front);
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+    // Validate arguments
+    if (argc < 1) {
+        std::cerr << "Error: Invalid program arguments" << std::endl;
+        return -1;
+    }
+
+    // Initialize resource manager
+    ResourceManager::initialize(argv[0]);
+
     // Initialize GLFW
     if (!glfwInit()) {
         std::cerr << "Failed to initialize GLFW" << std::endl;

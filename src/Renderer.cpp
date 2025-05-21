@@ -7,6 +7,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <iomanip>
 #include <sstream>
+#include "ResourceManager.h"
 
 Renderer::Renderer(GLFWwindow* window) : window(window) {
     // Get window dimensions
@@ -71,8 +72,8 @@ bool Renderer::createShaders() {
     std::string vertexCode, fragmentCode;
     std::ifstream vShaderFile, fShaderFile;
     
-    vShaderFile.open("shaders/vertex.glsl");
-    fShaderFile.open("shaders/fragment.glsl");
+    vShaderFile.open(ResourceManager::getResourcePath("shaders/vertex.glsl"));
+    fShaderFile.open(ResourceManager::getResourcePath("shaders/fragment.glsl"));
     
     if (!vShaderFile.is_open() || !fShaderFile.is_open()) {
         std::cerr << "Failed to open shader files" << std::endl;

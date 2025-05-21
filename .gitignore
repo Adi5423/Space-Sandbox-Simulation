@@ -11,6 +11,33 @@ cmake-build-*/
 *.swo
 *~
 
+# System Files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Debug files
+*.pdb
+*.ilk
+*.exp
+
+# Keep build directories but ignore specific files
+build/*.exe
+build/*.dll
+build/*.pdb
+build/*.ilk
+build/*.exp
+
+# Keep GLFW build but ignore specific files
+build_glfw/*.exe
+build_glfw/*.dll
+build_glfw/*.pdb
+build_glfw/*.ilk
+build_glfw/*.exp
+
 # Compiled Object files
 *.slo
 *.lo
@@ -48,8 +75,4 @@ _deps
 
 # Downloaded GLFW files
 glfw.zip
-glfw-3.4/
-
-# System Files
-.DS_Store
-Thumbs.db 
+glfw-3.4/ 

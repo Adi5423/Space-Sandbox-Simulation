@@ -32,6 +32,7 @@ set(SOURCES
     src/Simulator.cpp
     src/Grid.cpp
     src/TextRenderer.cpp
+    src/ResourceManager.cpp
     src/glad.c
 )
 

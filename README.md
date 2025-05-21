@@ -6,16 +6,9 @@ A lightweight space simulation project that demonstrates basic orbital mechanics
 
 Check out the [Coordinate System Demo](demo_samples/Coordinate%20System%20Demo.mp4) to see the project in action, showcasing the 3D coordinate system, camera controls, and basic rendering features.
 
-## Prerequisites
-
-- CMake (version 3.10 or higher)
-- MinGW-w64 (for Windows)
-- Git
-- OpenGL 3.3+ compatible graphics card
-
 ## Project Structure
 ```
-P1_B1/
+Space-Sandbox-Simulation/
 ├── build/           # Build output directory
 ├── include/         # Header files
 ├── lib/            # Libraries (GLFW, etc.)
@@ -38,17 +31,17 @@ P1_B1/
 - Sprint functionality
 - Cursor toggle for better control
 
-## Building the Project
+## Building and Running the Project
 
 ### Windows
 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd P1_B1
+cd Space-Sandbox-Simulation
 ```
 
-2. Build GLFW (first time only):
+2. Build dependencies:
 ```bash
 .\build_glfw.bat
 ```
@@ -58,14 +51,12 @@ cd P1_B1
 .\build.bat
 ```
 
-The executable will be created in the `build` directory.
-
-### Running the Simulation
-
-After building, run the executable:
+4. Run the simulation:
 ```bash
 .\build\astro-sim.exe
 ```
+
+That's it! The project is now ready to run. All necessary dependencies are included in the repository.
 
 ## Controls
 
@@ -81,6 +72,7 @@ After building, run the executable:
 
 ## Dependencies
 
+All dependencies are included in the repository:
 - GLFW 3.4
 - GLM
 - OpenGL 3.3+
@@ -114,5 +106,4 @@ Here are some screenshots showcasing the project's features:
 *Interactive Camera Movement*
 
 ![Text Rendering Example](demo_samples/Image_Sample-3.png)
-*.*
 *Text Rendering and UI Elements* 
