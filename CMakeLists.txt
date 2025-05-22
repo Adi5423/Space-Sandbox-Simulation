@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Set library paths
 set(GLFW_DIR "${CMAKE_SOURCE_DIR}/lib")
 set(GLM_DIR "${CMAKE_SOURCE_DIR}/include")
+set(NLOHMANN_JSON_DIR "${CMAKE_SOURCE_DIR}/include/nlohmann")
+set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/external/imgui")
 
 # Find required packages
 find_package(OpenGL REQUIRED)
@@ -17,6 +19,9 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/include
     ${GLM_DIR}
     ${OPENGL_INCLUDE_DIR}
+    ${NLOHMANN_JSON_DIR}
+    ${IMGUI_DIR}
+    ${IMGUI_DIR}/backends
 )
 
 # Link directories
@@ -33,11 +38,41 @@ set(SOURCES
     src/Grid.cpp
     src/TextRenderer.cpp
     src/ResourceManager.cpp
+    src/EngineBackend.cpp
+    src/EngineConfig.cpp
     src/glad.c
+    src/imgui/ImGuiManager.cpp
+    ${IMGUI_DIR}/imgui.cpp
+    ${IMGUI_DIR}/imgui_draw.cpp
+    ${IMGUI_DIR}/imgui_tables.cpp
+    ${IMGUI_DIR}/imgui_widgets.cpp
+    ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
+    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
+)
+
+# ImGui source files
+set(IMGUI_SOURCES
+    ${IMGUI_DIR}/imgui.cpp
+    ${IMGUI_DIR}/imgui_draw.cpp
+    ${IMGUI_DIR}/imgui_tables.cpp
+    ${IMGUI_DIR}/imgui_widgets.cpp
+    ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
+    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
 )
 
 # Create executable
-add_executable(astro-sim WIN32 ${SOURCES})
+add_executable(astro-sim WIN32 ${SOURCES} ${IMGUI_SOURCES})
+
+# Set include directories for the target
+target_include_directories(astro-sim PRIVATE
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/include
+    ${GLM_DIR}
+    ${OPENGL_INCLUDE_DIR}
+    ${NLOHMANN_JSON_DIR}
+    ${IMGUI_DIR}
+    ${IMGUI_DIR}/backends
+)
 
 # Link libraries
 target_link_libraries(astro-sim

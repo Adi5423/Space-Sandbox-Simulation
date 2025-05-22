@@ -1,0 +1,135 @@
+{
+    "engine": {
+        "version": "1.0.0",
+        "name": "AstroSandbox Engine",
+        "description": "Core configuration for the AstroSandbox Physics Engine"
+    },
+    "physics": {
+        "gravity": {
+            "enabled": true,
+            "constant": 6.67430e-11,
+            "max_distance": 1e12
+        },
+        "collision": {
+            "enabled": true,
+            "resolution_iterations": 4,
+            "penetration_threshold": 0.001,
+            "restitution": 0.8,
+            "friction": 0.3
+        },
+        "time": {
+            "fixed_timestep": 0.016666,
+            "max_timestep": 0.1,
+            "time_scale": 1.0
+        }
+    },
+    "rendering": {
+        "window": {
+            "default_width": 1920,
+            "default_height": 1080,
+            "vsync": true,
+            "fullscreen": true,
+            "resizable": true
+        },
+        "camera": {
+            "fov": 45.0,
+            "near_plane": 0.1,
+            "far_plane": 1000.0,
+            "movement_speed": 2.5,
+            "sprint_multiplier": 5.0,
+            "sensitivity": 0.1
+        },
+        "lighting": {
+            "ambient_strength": 0.2,
+            "specular_strength": 0.5,
+            "max_lights": 16
+        }
+    },
+    "simulation": {
+        "max_objects": 1000,
+        "spatial_partitioning": {
+            "enabled": true,
+            "grid_size": 100.0,
+            "max_objects_per_cell": 50
+        },
+        "trajectory": {
+            "prediction_steps": 100,
+            "step_size": 1.0,
+            "max_prediction_time": 1000.0
+        }
+    },
+    "resource_management": {
+        "cache": {
+            "max_size": 1024,
+            "policy": "LRU",
+            "preload_assets": true
+        },
+        "memory": {
+            "max_texture_memory": 1024,
+            "max_mesh_memory": 512,
+            "max_shader_memory": 64
+        }
+    },
+    "debug": {
+        "logging": {
+            "level": "INFO",
+            "file": "engine.log",
+            "max_file_size": 10,
+            "max_files": 5
+        },
+        "profiling": {
+            "enabled": true,
+            "sample_interval": 0.1,
+            "metrics": [
+                "fps",
+                "physics_time",
+                "render_time",
+                "memory_usage"
+            ]
+        },
+        "visualization": {
+            "show_grid": true,
+            "show_trajectories": true,
+            "show_colliders": false,
+            "show_fps": true
+        }
+    },
+    "input": {
+        "keyboard": {
+            "movement": {
+                "forward": "W",
+                "backward": "S",
+                "left": "A",
+                "right": "D",
+                "up": "SPACE",
+                "down": "LEFT_CONTROL"
+            },
+            "camera": {
+                "toggle_cursor": "C",
+                "sprint": "LEFT_SHIFT",
+                "speed_up": "E",
+                "speed_down": "Q"
+            }
+        },
+        "mouse": {
+            "sensitivity": 0.1,
+            "invert_y": false
+        }
+    },
+    "optimization": {
+        "threading": {
+            "physics_threads": 4,
+            "render_threads": 1,
+            "io_threads": 2
+        },
+        "batching": {
+            "enabled": true,
+            "max_batch_size": 1000
+        },
+        "culling": {
+            "enabled": true,
+            "frustum_culling": true,
+            "occlusion_culling": true
+        }
+    }
+} 

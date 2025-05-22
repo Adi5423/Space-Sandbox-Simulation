@@ -8,6 +8,7 @@
 #include "World.h"
 #include "Simulator.h"
 #include "ResourceManager.h"
+#include "imgui/ImGuiManager.h"
 
 // Global variables for window dimensions
 int windowWidth = 800;
@@ -45,6 +46,12 @@ void framebufferSizeCallback(GLFWwindow* /*window*/, int width, int height) {
     windowWidth = width;
     windowHeight = height;
     projection = glm::perspective(glm::radians(45.0f), (float)width / (float)height, 0.1f, 1000.0f);
+}
+
+// Window size callback
+void windowSizeCallback(GLFWwindow* /*window*/, int width, int height) {
+    windowWidth = width;
+    windowHeight = height;
 }
 
 // Mouse callback function
@@ -96,6 +103,13 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
+    // Set window hints
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+    glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
+
     // Create window
     GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "AstroSandbox", NULL, NULL);
     if (!window) {
@@ -104,8 +118,15 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
+    // Maximize the window
+    glfwMaximizeWindow(window);
+
+    // Get the actual window size after maximization
+    glfwGetWindowSize(window, &windowWidth, &windowHeight);
+
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
+    glfwSetWindowSizeCallback(window, windowSizeCallback);
 
     // Initialize GLAD
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
@@ -124,12 +145,18 @@ int main(int argc, char* argv[]) {
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, mouseCallback);
 
+    // Initialize ImGui
+    ImGuiManager* guiManager = new ImGuiManager(window);
+
     // Main loop
     while (!glfwWindowShouldClose(window)) {
         // Per-frame time logic
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
+
+        // Start the ImGui frame
+        guiManager->beginFrame();
 
         // Handle input
         float currentMoveSpeed = baseCameraSpeed * speedMultiplier;
@@ -192,6 +219,12 @@ int main(int argc, char* argv[]) {
 
         // Render
         renderer.render(view, projection, cameraPos);
+
+        // Show ImGui windows
+        guiManager->showMainWindow(world, cameraPos, cameraFront);
+
+        // End the ImGui frame
+        guiManager->endFrame();
 
         // Swap buffers and poll events
         glfwSwapBuffers(window);
