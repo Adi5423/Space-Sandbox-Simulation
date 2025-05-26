@@ -3,29 +3,30 @@ project(AstroSandbox)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+# Set Qt6 installation path
+set(CMAKE_PREFIX_PATH "D:/QT/Installation/1st/6.9.0/mingw_64")
 
 # Set library paths
-set(GLFW_DIR "${CMAKE_SOURCE_DIR}/lib")
 set(GLM_DIR "${CMAKE_SOURCE_DIR}/include")
 set(NLOHMANN_JSON_DIR "${CMAKE_SOURCE_DIR}/include/nlohmann")
-set(IMGUI_DIR "${CMAKE_SOURCE_DIR}/external/imgui")
 
 # Find required packages
 find_package(OpenGL REQUIRED)
+find_package(Qt6 COMPONENTS Core Gui Widgets OpenGL OpenGLWidgets REQUIRED)
 
 # Include directories
 include_directories(
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/src
     ${GLM_DIR}
     ${OPENGL_INCLUDE_DIR}
     ${NLOHMANN_JSON_DIR}
-    ${IMGUI_DIR}
-    ${IMGUI_DIR}/backends
 )
-
-# Link directories
-link_directories(${GLFW_DIR})
 
 # Source files
 set(SOURCES
@@ -41,50 +42,45 @@ set(SOURCES
     src/EngineBackend.cpp
     src/EngineConfig.cpp
     src/glad.c
-    src/imgui/ImGuiManager.cpp
-    ${IMGUI_DIR}/imgui.cpp
-    ${IMGUI_DIR}/imgui_draw.cpp
-    ${IMGUI_DIR}/imgui_tables.cpp
-    ${IMGUI_DIR}/imgui_widgets.cpp
-    ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
-    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
-)
-
-# ImGui source files
-set(IMGUI_SOURCES
-    ${IMGUI_DIR}/imgui.cpp
-    ${IMGUI_DIR}/imgui_draw.cpp
-    ${IMGUI_DIR}/imgui_tables.cpp
-    ${IMGUI_DIR}/imgui_widgets.cpp
-    ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
-    ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
+    src/gui/MainWindow.cpp
+    src/gui/OpenGLWidget.cpp
 )
 
 # Create executable
-add_executable(astro-sim WIN32 ${SOURCES} ${IMGUI_SOURCES})
+add_executable(astro-sim WIN32 ${SOURCES})
 
 # Set include directories for the target
 target_include_directories(astro-sim PRIVATE
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/src
     ${GLM_DIR}
     ${OPENGL_INCLUDE_DIR}
     ${NLOHMANN_JSON_DIR}
-    ${IMGUI_DIR}
-    ${IMGUI_DIR}/backends
 )
 
 # Link libraries
 target_link_libraries(astro-sim
     ${OPENGL_LIBRARIES}
-    ${CMAKE_SOURCE_DIR}/lib/libglfw3.a
-    gdi32
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Widgets
+    Qt6::OpenGL
+    Qt6::OpenGLWidgets
 )
 
 # Add compiler warnings and optimizations
 if(MSVC)
     target_compile_options(astro-sim PRIVATE /W4 /MP)
 else()
+    # Increase memory limit for MinGW
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--stack,33554432")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--stack,33554432")
+    
+    # Set environment variables for increased memory limit
+    set(ENV{CFLAGS} "-fmax-errors=100 -Wl,--stack,33554432")
+    set(ENV{CXXFLAGS} "-fmax-errors=100 -Wl,--stack,33554432")
+    
     target_compile_options(astro-sim PRIVATE 
         -Wall 
         -Wextra 
@@ -93,13 +89,25 @@ else()
         -O2
         -pipe
         -fno-omit-frame-pointer
+        -fno-keep-inline-dllexport
+        -fno-keep-inline-functions
+        -ffunction-sections
+        -fdata-sections
+        -fexceptions
+        -frtti
     )
+    
     # Suppress pedantic warnings for glad.c
     set_source_files_properties(src/glad.c PROPERTIES COMPILE_FLAGS "-Wno-pedantic")
-    # Set environment variable for increased memory limit
-    set(ENV{CFLAGS} "-fmax-errors=100")
-    set(ENV{CXXFLAGS} "-fmax-errors=100")
 endif()
 
-# Enable parallel compilation
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe") 
+# Enable parallel compilation with reduced number of jobs
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe")
+
+# Set build type to Release for better performance
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+# Set number of parallel jobs
+set(CMAKE_BUILD_PARALLEL_LEVEL 2) 

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "glad/glad.h"
-#include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include "Grid.h"
 #include "TextRenderer.h"
@@ -17,19 +16,15 @@ class Vector;
 
 class Renderer {
 public:
-    Renderer(GLFWwindow* window);
+    Renderer();
     ~Renderer();
 
     bool initialize();
     void render(const World& world);
     void render(const glm::mat4& view, const glm::mat4& projection, const glm::vec3& cameraPos);
     void clear();
-    bool shouldClose() const;
-    void pollEvents();
-    void swapBuffers();
 
 private:
-    GLFWwindow* window;
     int width;
     int height;
     std::string title = "AstroSandbox";

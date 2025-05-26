@@ -9,10 +9,7 @@
 #include <sstream>
 #include "ResourceManager.h"
 
-Renderer::Renderer(GLFWwindow* window) : window(window) {
-    // Get window dimensions
-    glfwGetWindowSize(window, &width, &height);
-    
+Renderer::Renderer() {
     // Enable depth testing
     glEnable(GL_DEPTH_TEST);
     
@@ -33,30 +30,6 @@ Renderer::~Renderer() {
 }
 
 bool Renderer::initialize() {
-    if (!glfwInit()) {
-        std::cerr << "Failed to initialize GLFW" << std::endl;
-        return false;
-    }
-
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
-    if (!window) {
-        std::cerr << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return false;
-    }
-
-    glfwMakeContextCurrent(window);
-
-    // Initialize GLAD
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-        std::cerr << "Failed to initialize GLAD" << std::endl;
-        return false;
-    }
-
     if (!createShaders()) {
         return false;
     }
@@ -161,13 +134,11 @@ void Renderer::render(const glm::mat4& view, const glm::mat4& projection, const 
     float paddingRight = 20.0f; // Fixed padding from the right edge
     float paddingTop = 20.0f; // Padding from the top edge
     float textScale = 1.5f;  // Increased scale for better visibility
-    // The estimatedTextWidth is not needed with this positioning approach
-    // float estimatedTextWidth = ss.str().length() * 8.0f * textScale; // Estimate width based on character count
 
     // Render coordinates in top right corner with padding
     textRenderer->renderText(
         ss.str(),
-        width - paddingRight - textRenderer->getTextWidth(ss.str(), textScale), // Position based on calculated width and right padding
+        width - paddingRight - textRenderer->getTextWidth(ss.str(), textScale),
         height - paddingTop,
         textScale,
         glm::vec3(1.0f, 1.0f, 1.0f)
@@ -222,16 +193,4 @@ void Renderer::updateProjectionMatrix() {
 void Renderer::clear() {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
-bool Renderer::shouldClose() const {
-    return glfwWindowShouldClose(window);
-}
-
-void Renderer::pollEvents() {
-    glfwPollEvents();
-}
-
-void Renderer::swapBuffers() {
-    glfwSwapBuffers(window);
 } 

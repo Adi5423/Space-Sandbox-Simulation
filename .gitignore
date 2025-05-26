@@ -1,8 +1,17 @@
-# Build directories
+# Build and CMake generated files
 build/
 build_glfw/
 out/
 cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+*.cmake
+!CMakeLists.txt
 
 # IDE specific files
 .vs/
@@ -10,69 +19,75 @@ cmake-build-*/
 *.swp
 *.swo
 *~
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
 
 # System Files
 .DS_Store
 Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
 
 # Temporary files
 *.tmp
 *.temp
+*.log
+*.tlog
+*.lastbuildstate
 
-# Debug files
+# Debug and Release files
 *.pdb
 *.ilk
 *.exp
-
-# Keep build directories but ignore specific files
-build/*.exe
-build/*.dll
-build/*.pdb
-build/*.ilk
-build/*.exp
-
-# Keep GLFW build but ignore specific files
-build_glfw/*.exe
-build_glfw/*.dll
-build_glfw/*.pdb
-build_glfw/*.ilk
-build_glfw/*.exp
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
+*.lib
+*.dll
+*.exe
 *.obj
+*.o
+*.lo
+*.slo
+*.a
+*.so
+*.dylib
+*.dll.a
+*.lib.a
 
 # Precompiled Headers
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-# *.dll
+# Qt specific
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.qm
+*.moc
+*.qrc
+*.qmlc
+*.jsc
 
-# Compiled Static libraries
-*.lai
-*.la
-# *.a
-# *.lib
+# External dependencies (to be downloaded by setup.bat)
+external/glfw/
+external/glm/
+external/imgui/
+external/nlohmann_json/
 
-# Executables
-*.exe
-*.out
-*.app
+# Project specific
+*.zip
+*.tar.gz
+*.tar
+*.7z
+*.rar
 
-# CMake generated files
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-
-# Downloaded GLFW files
-glfw.zip
-glfw-3.4/ 
+# Keep source files
+!src/
+!include/
+!CMakeLists.txt
+!build.bat
+!setup.bat
+!README.md 
