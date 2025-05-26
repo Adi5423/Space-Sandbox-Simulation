@@ -34,7 +34,7 @@ Not implemented 1st 2nd and 4th
 The project includes several demo samples showcasing different features. These images are located in the `demo_samples` directory of the repository.
 
 ### Default Window
-![Default Window](demo_samples/df_win.png)
+![Default Window](demo_samples/df_wind.png)
 - Standard application layout
 - Basic window configuration
 - Default control placement
