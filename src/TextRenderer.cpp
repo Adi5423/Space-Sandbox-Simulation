@@ -278,8 +278,8 @@ void TextRenderer::renderText(const std::string& text, float x, float y, float s
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Render each character
-    for (char c : text) {
-        if (c < 0 || c > 127) continue;  // Skip non-ASCII characters
+    for (unsigned char c : text) {
+        if (c > 127) continue;  // Skip non-ASCII characters
 
         // Calculate texture coordinates
         float texX = (c % CHARS_PER_ROW) * (1.0f / CHARS_PER_ROW);
@@ -321,8 +321,8 @@ void TextRenderer::renderText(const std::string& text, float x, float y, float s
 // Calculate the width of a text string
 float TextRenderer::getTextWidth(const std::string& text, float scale) const {
     float width = 0.0f;
-    for (char c : text) {
-        // Assuming a fixed character width, advance cursor for each character
+    for (unsigned char c : text) {
+        if (c > 127) continue;  // Skip non-ASCII characters
         width += CHAR_WIDTH * scale;
     }
     return width;

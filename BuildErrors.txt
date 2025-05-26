@@ -1,0 +1,554 @@
+D:\Programming\C_Level\C++\Projects\HCK\Space\Test2\Space-Sandbox-Simulation\Space-Sandbox-Simulation>.\build.bat
+-- Building for: Ninja
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/mingw64/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/mingw64/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found OpenGL: opengl32
+-- Configuring done (1.8s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/build
+[6/20] Building CXX object CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_opengl3.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_opengl3.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_opengl3.cpp.obj -MF CMakeFiles\astro-sim.dir\external\imgui\backends\imgui_impl_opengl3.cpp.obj.d -o CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_opengl3.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends/imgui_impl_opengl3.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[7/20] Building CXX object CMakeFiles/astro-sim.dir/src/TextRenderer.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/src/TextRenderer.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/src/TextRenderer.cpp.obj -MF CMakeFiles\astro-sim.dir\src\TextRenderer.cpp.obj.d -o CMakeFiles/astro-sim.dir/src/TextRenderer.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/TextRenderer.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[8/20] Building CXX object CMakeFiles/astro-sim.dir/src/Renderer.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/src/Renderer.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/src/Renderer.cpp.obj -MF CMakeFiles\astro-sim.dir\src\Renderer.cpp.obj.d -o CMakeFiles/astro-sim.dir/src/Renderer.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/Renderer.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[9/20] Building CXX object CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_glfw.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_glfw.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_glfw.cpp.obj -MF CMakeFiles\astro-sim.dir\external\imgui\backends\imgui_impl_glfw.cpp.obj.d -o CMakeFiles/astro-sim.dir/external/imgui/backends/imgui_impl_glfw.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends/imgui_impl_glfw.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[10/20] Building CXX object CMakeFiles/astro-sim.dir/src/imgui/ImGuiManager.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/src/imgui/ImGuiManager.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/src/imgui/ImGuiManager.cpp.obj -MF CMakeFiles\astro-sim.dir\src\imgui\ImGuiManager.cpp.obj.d -o CMakeFiles/astro-sim.dir/src/imgui/ImGuiManager.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/imgui/ImGuiManager.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[11/20] Building CXX object CMakeFiles/astro-sim.dir/src/EngineConfig.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/src/EngineConfig.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/src/EngineConfig.cpp.obj -MF CMakeFiles\astro-sim.dir\src\EngineConfig.cpp.obj.d -o CMakeFiles/astro-sim.dir/src/EngineConfig.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/EngineConfig.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[12/20] Building CXX object CMakeFiles/astro-sim.dir/src/EngineBackend.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/src/EngineBackend.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/src/EngineBackend.cpp.obj -MF CMakeFiles\astro-sim.dir\src\EngineBackend.cpp.obj.d -o CMakeFiles/astro-sim.dir/src/EngineBackend.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/EngineBackend.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[13/20] Building CXX object CMakeFiles/astro-sim.dir/src/Grid.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/src/Grid.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/src/Grid.cpp.obj -MF CMakeFiles\astro-sim.dir\src\Grid.cpp.obj.d -o CMakeFiles/astro-sim.dir/src/Grid.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/Grid.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[14/20] Building CXX object CMakeFiles/astro-sim.dir/external/imgui/imgui_tables.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/external/imgui/imgui_tables.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/external/imgui/imgui_tables.cpp.obj -MF CMakeFiles\astro-sim.dir\external\imgui\imgui_tables.cpp.obj.d -o CMakeFiles/astro-sim.dir/external/imgui/imgui_tables.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/imgui_tables.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[15/20] Building CXX object CMakeFiles/astro-sim.dir/external/imgui/imgui_draw.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/external/imgui/imgui_draw.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/external/imgui/imgui_draw.cpp.obj -MF CMakeFiles\astro-sim.dir\external\imgui\imgui_draw.cpp.obj.d -o CMakeFiles/astro-sim.dir/external/imgui/imgui_draw.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/imgui_draw.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[16/20] Building CXX object CMakeFiles/astro-sim.dir/external/imgui/imgui_widgets.cpp.obj
+FAILED: CMakeFiles/astro-sim.dir/external/imgui/imgui_widgets.cpp.obj
+C:\PROGRA~1\mingw64\bin\C__~1.EXE  -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/include/nlohmann -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui -ID:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/backends -std=gnu++17 -Wall -Wextra -Wpedantic -MD -MT CMakeFiles/astro-sim.dir/external/imgui/imgui_widgets.cpp.obj -MF CMakeFiles\astro-sim.dir\external\imgui\imgui_widgets.cpp.obj.d -o CMakeFiles/astro-sim.dir/external/imgui/imgui_widgets.cpp.obj -c D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/external/imgui/imgui_widgets.cpp
+
+cc1plus.exe: out of memory allocating 65536 bytes
+[17/20] Building C object CMakeFiles/astro-sim.dir/src/glad.c.obj
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'get_proc':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:139:18: warning: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
+  139 |         result = (void*)GetProcAddress((HMODULE) libGL, namez);
+      |                  ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'load_GL_VERSION_1_0':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:978:27: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  978 |         glad_glCullFace = (PFNGLCULLFACEPROC)load("glCullFace");
+      |                           ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:979:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  979 |         glad_glFrontFace = (PFNGLFRONTFACEPROC)load("glFrontFace");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:980:23: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  980 |         glad_glHint = (PFNGLHINTPROC)load("glHint");
+      |                       ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:981:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  981 |         glad_glLineWidth = (PFNGLLINEWIDTHPROC)load("glLineWidth");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:982:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  982 |         glad_glPointSize = (PFNGLPOINTSIZEPROC)load("glPointSize");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:983:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  983 |         glad_glPolygonMode = (PFNGLPOLYGONMODEPROC)load("glPolygonMode");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:984:26: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  984 |         glad_glScissor = (PFNGLSCISSORPROC)load("glScissor");
+      |                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:985:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  985 |         glad_glTexParameterf = (PFNGLTEXPARAMETERFPROC)load("glTexParameterf");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:986:33: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  986 |         glad_glTexParameterfv = (PFNGLTEXPARAMETERFVPROC)load("glTexParameterfv");
+      |                                 ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:987:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  987 |         glad_glTexParameteri = (PFNGLTEXPARAMETERIPROC)load("glTexParameteri");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:988:33: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  988 |         glad_glTexParameteriv = (PFNGLTEXPARAMETERIVPROC)load("glTexParameteriv");
+      |                                 ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:989:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  989 |         glad_glTexImage1D = (PFNGLTEXIMAGE1DPROC)load("glTexImage1D");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:990:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  990 |         glad_glTexImage2D = (PFNGLTEXIMAGE2DPROC)load("glTexImage2D");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:991:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  991 |         glad_glDrawBuffer = (PFNGLDRAWBUFFERPROC)load("glDrawBuffer");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:992:24: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  992 |         glad_glClear = (PFNGLCLEARPROC)load("glClear");
+      |                        ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:993:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  993 |         glad_glClearColor = (PFNGLCLEARCOLORPROC)load("glClearColor");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:994:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  994 |         glad_glClearStencil = (PFNGLCLEARSTENCILPROC)load("glClearStencil");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:995:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  995 |         glad_glClearDepth = (PFNGLCLEARDEPTHPROC)load("glClearDepth");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:996:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  996 |         glad_glStencilMask = (PFNGLSTENCILMASKPROC)load("glStencilMask");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:997:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  997 |         glad_glColorMask = (PFNGLCOLORMASKPROC)load("glColorMask");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:998:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  998 |         glad_glDepthMask = (PFNGLDEPTHMASKPROC)load("glDepthMask");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:999:26: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+  999 |         glad_glDisable = (PFNGLDISABLEPROC)load("glDisable");
+      |                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1000:25: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1000 |         glad_glEnable = (PFNGLENABLEPROC)load("glEnable");
+      |                         ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1001:25: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1001 |         glad_glFinish = (PFNGLFINISHPROC)load("glFinish");
+      |                         ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1002:24: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1002 |         glad_glFlush = (PFNGLFLUSHPROC)load("glFlush");
+      |                        ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1003:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1003 |         glad_glBlendFunc = (PFNGLBLENDFUNCPROC)load("glBlendFunc");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1004:26: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1004 |         glad_glLogicOp = (PFNGLLOGICOPPROC)load("glLogicOp");
+      |                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1005:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1005 |         glad_glStencilFunc = (PFNGLSTENCILFUNCPROC)load("glStencilFunc");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1006:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1006 |         glad_glStencilOp = (PFNGLSTENCILOPPROC)load("glStencilOp");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1007:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1007 |         glad_glDepthFunc = (PFNGLDEPTHFUNCPROC)load("glDepthFunc");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1008:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1008 |         glad_glPixelStoref = (PFNGLPIXELSTOREFPROC)load("glPixelStoref");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1009:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1009 |         glad_glPixelStorei = (PFNGLPIXELSTOREIPROC)load("glPixelStorei");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1010:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1010 |         glad_glReadBuffer = (PFNGLREADBUFFERPROC)load("glReadBuffer");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1011:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1011 |         glad_glReadPixels = (PFNGLREADPIXELSPROC)load("glReadPixels");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1012:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1012 |         glad_glGetBooleanv = (PFNGLGETBOOLEANVPROC)load("glGetBooleanv");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1013:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1013 |         glad_glGetDoublev = (PFNGLGETDOUBLEVPROC)load("glGetDoublev");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1014:27: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1014 |         glad_glGetError = (PFNGLGETERRORPROC)load("glGetError");
+      |                           ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1015:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1015 |         glad_glGetFloatv = (PFNGLGETFLOATVPROC)load("glGetFloatv");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1016:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1016 |         glad_glGetIntegerv = (PFNGLGETINTEGERVPROC)load("glGetIntegerv");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1017:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1017 |         glad_glGetString = (PFNGLGETSTRINGPROC)load("glGetString");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1018:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1018 |         glad_glGetTexImage = (PFNGLGETTEXIMAGEPROC)load("glGetTexImage");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1019:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1019 |         glad_glGetTexParameterfv = (PFNGLGETTEXPARAMETERFVPROC)load("glGetTexParameterfv");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1020:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1020 |         glad_glGetTexParameteriv = (PFNGLGETTEXPARAMETERIVPROC)load("glGetTexParameteriv");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1021:41: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1021 |         glad_glGetTexLevelParameterfv = (PFNGLGETTEXLEVELPARAMETERFVPROC)load("glGetTexLevelParameterfv");
+      |                                         ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1022:41: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1022 |         glad_glGetTexLevelParameteriv = (PFNGLGETTEXLEVELPARAMETERIVPROC)load("glGetTexLevelParameteriv");
+      |                                         ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1023:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1023 |         glad_glIsEnabled = (PFNGLISENABLEDPROC)load("glIsEnabled");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1024:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1024 |         glad_glDepthRange = (PFNGLDEPTHRANGEPROC)load("glDepthRange");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1025:27: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1025 |         glad_glViewport = (PFNGLVIEWPORTPROC)load("glViewport");
+      |                           ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'load_GL_VERSION_1_1':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1029:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1029 |         glad_glDrawArrays = (PFNGLDRAWARRAYSPROC)load("glDrawArrays");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1030:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1030 |         glad_glDrawElements = (PFNGLDRAWELEMENTSPROC)load("glDrawElements");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1031:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1031 |         glad_glPolygonOffset = (PFNGLPOLYGONOFFSETPROC)load("glPolygonOffset");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1032:33: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1032 |         glad_glCopyTexImage1D = (PFNGLCOPYTEXIMAGE1DPROC)load("glCopyTexImage1D");
+      |                                 ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1033:33: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1033 |         glad_glCopyTexImage2D = (PFNGLCOPYTEXIMAGE2DPROC)load("glCopyTexImage2D");
+      |                                 ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1034:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1034 |         glad_glCopyTexSubImage1D = (PFNGLCOPYTEXSUBIMAGE1DPROC)load("glCopyTexSubImage1D");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1035:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1035 |         glad_glCopyTexSubImage2D = (PFNGLCOPYTEXSUBIMAGE2DPROC)load("glCopyTexSubImage2D");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1036:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1036 |         glad_glTexSubImage1D = (PFNGLTEXSUBIMAGE1DPROC)load("glTexSubImage1D");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1037:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1037 |         glad_glTexSubImage2D = (PFNGLTEXSUBIMAGE2DPROC)load("glTexSubImage2D");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1038:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1038 |         glad_glBindTexture = (PFNGLBINDTEXTUREPROC)load("glBindTexture");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1039:33: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1039 |         glad_glDeleteTextures = (PFNGLDELETETEXTURESPROC)load("glDeleteTextures");
+      |                                 ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1040:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1040 |         glad_glGenTextures = (PFNGLGENTEXTURESPROC)load("glGenTextures");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1041:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1041 |         glad_glIsTexture = (PFNGLISTEXTUREPROC)load("glIsTexture");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'load_GL_VERSION_1_2':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1045:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1045 |         glad_glDrawRangeElements = (PFNGLDRAWRANGEELEMENTSPROC)load("glDrawRangeElements");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1046:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1046 |         glad_glTexImage3D = (PFNGLTEXIMAGE3DPROC)load("glTexImage3D");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1047:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1047 |         glad_glTexSubImage3D = (PFNGLTEXSUBIMAGE3DPROC)load("glTexSubImage3D");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1048:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1048 |         glad_glCopyTexSubImage3D = (PFNGLCOPYTEXSUBIMAGE3DPROC)load("glCopyTexSubImage3D");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'load_GL_VERSION_1_3':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1052:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1052 |         glad_glActiveTexture = (PFNGLACTIVETEXTUREPROC)load("glActiveTexture");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1053:33: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1053 |         glad_glSampleCoverage = (PFNGLSAMPLECOVERAGEPROC)load("glSampleCoverage");
+      |                                 ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1054:39: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1054 |         glad_glCompressedTexImage3D = (PFNGLCOMPRESSEDTEXIMAGE3DPROC)load("glCompressedTexImage3D");
+      |                                       ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1055:39: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1055 |         glad_glCompressedTexImage2D = (PFNGLCOMPRESSEDTEXIMAGE2DPROC)load("glCompressedTexImage2D");
+      |                                       ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1056:39: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1056 |         glad_glCompressedTexImage1D = (PFNGLCOMPRESSEDTEXIMAGE1DPROC)load("glCompressedTexImage1D");
+      |                                       ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1057:42: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1057 |         glad_glCompressedTexSubImage3D = (PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC)load("glCompressedTexSubImage3D");
+      |                                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1058:42: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1058 |         glad_glCompressedTexSubImage2D = (PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC)load("glCompressedTexSubImage2D");
+      |                                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1059:42: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1059 |         glad_glCompressedTexSubImage1D = (PFNGLCOMPRESSEDTEXSUBIMAGE1DPROC)load("glCompressedTexSubImage1D");
+      |                                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1060:40: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1060 |         glad_glGetCompressedTexImage = (PFNGLGETCOMPRESSEDTEXIMAGEPROC)load("glGetCompressedTexImage");
+      |                                        ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'load_GL_VERSION_1_4':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1064:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1064 |         glad_glBlendFuncSeparate = (PFNGLBLENDFUNCSEPARATEPROC)load("glBlendFuncSeparate");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1065:34: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1065 |         glad_glMultiDrawArrays = (PFNGLMULTIDRAWARRAYSPROC)load("glMultiDrawArrays");
+      |                                  ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1066:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1066 |         glad_glMultiDrawElements = (PFNGLMULTIDRAWELEMENTSPROC)load("glMultiDrawElements");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1067:34: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1067 |         glad_glPointParameterf = (PFNGLPOINTPARAMETERFPROC)load("glPointParameterf");
+      |                                  ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1068:35: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1068 |         glad_glPointParameterfv = (PFNGLPOINTPARAMETERFVPROC)load("glPointParameterfv");
+      |                                   ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1069:34: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1069 |         glad_glPointParameteri = (PFNGLPOINTPARAMETERIPROC)load("glPointParameteri");
+      |                                  ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1070:35: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1070 |         glad_glPointParameteriv = (PFNGLPOINTPARAMETERIVPROC)load("glPointParameteriv");
+      |                                   ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1071:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1071 |         glad_glBlendColor = (PFNGLBLENDCOLORPROC)load("glBlendColor");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1072:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1072 |         glad_glBlendEquation = (PFNGLBLENDEQUATIONPROC)load("glBlendEquation");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'load_GL_VERSION_1_5':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1076:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1076 |         glad_glGenQueries = (PFNGLGENQUERIESPROC)load("glGenQueries");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1077:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1077 |         glad_glDeleteQueries = (PFNGLDELETEQUERIESPROC)load("glDeleteQueries");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1078:26: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1078 |         glad_glIsQuery = (PFNGLISQUERYPROC)load("glIsQuery");
+      |                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1079:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1079 |         glad_glBeginQuery = (PFNGLBEGINQUERYPROC)load("glBeginQuery");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1080:27: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1080 |         glad_glEndQuery = (PFNGLENDQUERYPROC)load("glEndQuery");
+      |                           ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1081:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1081 |         glad_glGetQueryiv = (PFNGLGETQUERYIVPROC)load("glGetQueryiv");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1082:35: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1082 |         glad_glGetQueryObjectiv = (PFNGLGETQUERYOBJECTIVPROC)load("glGetQueryObjectiv");
+      |                                   ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1083:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1083 |         glad_glGetQueryObjectuiv = (PFNGLGETQUERYOBJECTUIVPROC)load("glGetQueryObjectuiv");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1084:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1084 |         glad_glBindBuffer = (PFNGLBINDBUFFERPROC)load("glBindBuffer");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1085:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1085 |         glad_glDeleteBuffers = (PFNGLDELETEBUFFERSPROC)load("glDeleteBuffers");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1086:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1086 |         glad_glGenBuffers = (PFNGLGENBUFFERSPROC)load("glGenBuffers");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1087:27: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1087 |         glad_glIsBuffer = (PFNGLISBUFFERPROC)load("glIsBuffer");
+      |                           ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1088:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1088 |         glad_glBufferData = (PFNGLBUFFERDATAPROC)load("glBufferData");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1089:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1089 |         glad_glBufferSubData = (PFNGLBUFFERSUBDATAPROC)load("glBufferSubData");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1090:35: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1090 |         glad_glGetBufferSubData = (PFNGLGETBUFFERSUBDATAPROC)load("glGetBufferSubData");
+      |                                   ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1091:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1091 |         glad_glMapBuffer = (PFNGLMAPBUFFERPROC)load("glMapBuffer");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1092:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1092 |         glad_glUnmapBuffer = (PFNGLUNMAPBUFFERPROC)load("glUnmapBuffer");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1093:39: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1093 |         glad_glGetBufferParameteriv = (PFNGLGETBUFFERPARAMETERIVPROC)load("glGetBufferParameteriv");
+      |                                       ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1094:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1094 |         glad_glGetBufferPointerv = (PFNGLGETBUFFERPOINTERVPROC)load("glGetBufferPointerv");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c: In function 'load_GL_VERSION_2_0':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1098:40: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1098 |         glad_glBlendEquationSeparate = (PFNGLBLENDEQUATIONSEPARATEPROC)load("glBlendEquationSeparate");
+      |                                        ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1099:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1099 |         glad_glDrawBuffers = (PFNGLDRAWBUFFERSPROC)load("glDrawBuffers");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1100:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1100 |         glad_glStencilOpSeparate = (PFNGLSTENCILOPSEPARATEPROC)load("glStencilOpSeparate");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1101:38: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1101 |         glad_glStencilFuncSeparate = (PFNGLSTENCILFUNCSEPARATEPROC)load("glStencilFuncSeparate");
+      |                                      ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1102:38: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1102 |         glad_glStencilMaskSeparate = (PFNGLSTENCILMASKSEPARATEPROC)load("glStencilMaskSeparate");
+      |                                      ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1103:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1103 |         glad_glAttachShader = (PFNGLATTACHSHADERPROC)load("glAttachShader");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1104:37: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1104 |         glad_glBindAttribLocation = (PFNGLBINDATTRIBLOCATIONPROC)load("glBindAttribLocation");
+      |                                     ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1105:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1105 |         glad_glCompileShader = (PFNGLCOMPILESHADERPROC)load("glCompileShader");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1106:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1106 |         glad_glCreateProgram = (PFNGLCREATEPROGRAMPROC)load("glCreateProgram");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1107:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1107 |         glad_glCreateShader = (PFNGLCREATESHADERPROC)load("glCreateShader");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1108:32: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1108 |         glad_glDeleteProgram = (PFNGLDELETEPROGRAMPROC)load("glDeleteProgram");
+      |                                ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1109:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1109 |         glad_glDeleteShader = (PFNGLDELETESHADERPROC)load("glDeleteShader");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1110:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1110 |         glad_glDetachShader = (PFNGLDETACHSHADERPROC)load("glDetachShader");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1111:43: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1111 |         glad_glDisableVertexAttribArray = (PFNGLDISABLEVERTEXATTRIBARRAYPROC)load("glDisableVertexAttribArray");
+      |                                           ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1112:42: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1112 |         glad_glEnableVertexAttribArray = (PFNGLENABLEVERTEXATTRIBARRAYPROC)load("glEnableVertexAttribArray");
+      |                                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1113:34: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1113 |         glad_glGetActiveAttrib = (PFNGLGETACTIVEATTRIBPROC)load("glGetActiveAttrib");
+      |                                  ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1114:35: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1114 |         glad_glGetActiveUniform = (PFNGLGETACTIVEUNIFORMPROC)load("glGetActiveUniform");
+      |                                   ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1115:37: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1115 |         glad_glGetAttachedShaders = (PFNGLGETATTACHEDSHADERSPROC)load("glGetAttachedShaders");
+      |                                     ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1116:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1116 |         glad_glGetAttribLocation = (PFNGLGETATTRIBLOCATIONPROC)load("glGetAttribLocation");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1117:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1117 |         glad_glGetProgramiv = (PFNGLGETPROGRAMIVPROC)load("glGetProgramiv");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1118:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1118 |         glad_glGetProgramInfoLog = (PFNGLGETPROGRAMINFOLOGPROC)load("glGetProgramInfoLog");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1119:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1119 |         glad_glGetShaderiv = (PFNGLGETSHADERIVPROC)load("glGetShaderiv");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1120:35: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1120 |         glad_glGetShaderInfoLog = (PFNGLGETSHADERINFOLOGPROC)load("glGetShaderInfoLog");
+      |                                   ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1121:34: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1121 |         glad_glGetShaderSource = (PFNGLGETSHADERSOURCEPROC)load("glGetShaderSource");
+      |                                  ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1122:37: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1122 |         glad_glGetUniformLocation = (PFNGLGETUNIFORMLOCATIONPROC)load("glGetUniformLocation");
+      |                                     ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1123:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1123 |         glad_glGetUniformfv = (PFNGLGETUNIFORMFVPROC)load("glGetUniformfv");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1124:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1124 |         glad_glGetUniformiv = (PFNGLGETUNIFORMIVPROC)load("glGetUniformiv");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1125:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1125 |         glad_glGetVertexAttribdv = (PFNGLGETVERTEXATTRIBDVPROC)load("glGetVertexAttribdv");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1126:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1126 |         glad_glGetVertexAttribfv = (PFNGLGETVERTEXATTRIBFVPROC)load("glGetVertexAttribfv");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1127:36: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1127 |         glad_glGetVertexAttribiv = (PFNGLGETVERTEXATTRIBIVPROC)load("glGetVertexAttribiv");
+      |                                    ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1128:42: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1128 |         glad_glGetVertexAttribPointerv = (PFNGLGETVERTEXATTRIBPOINTERVPROC)load("glGetVertexAttribPointerv");
+      |                                          ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1129:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1129 |         glad_glIsProgram = (PFNGLISPROGRAMPROC)load("glIsProgram");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1130:27: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1130 |         glad_glIsShader = (PFNGLISSHADERPROC)load("glIsShader");
+      |                           ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1131:30: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1131 |         glad_glLinkProgram = (PFNGLLINKPROGRAMPROC)load("glLinkProgram");
+      |                              ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1132:31: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1132 |         glad_glShaderSource = (PFNGLSHADERSOURCEPROC)load("glShaderSource");
+      |                               ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1133:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1133 |         glad_glUseProgram = (PFNGLUSEPROGRAMPROC)load("glUseProgram");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1134:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1134 |         glad_glUniform1f = (PFNGLUNIFORM1FPROC)load("glUniform1f");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1135:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1135 |         glad_glUniform2f = (PFNGLUNIFORM2FPROC)load("glUniform2f");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1136:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1136 |         glad_glUniform3f = (PFNGLUNIFORM3FPROC)load("glUniform3f");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1137:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1137 |         glad_glUniform4f = (PFNGLUNIFORM4FPROC)load("glUniform4f");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1138:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1138 |         glad_glUniform1i = (PFNGLUNIFORM1IPROC)load("glUniform1i");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1139:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1139 |         glad_glUniform2i = (PFNGLUNIFORM2IPROC)load("glUniform2i");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1140:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1140 |         glad_glUniform3i = (PFNGLUNIFORM3IPROC)load("glUniform3i");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1141:28: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1141 |         glad_glUniform4i = (PFNGLUNIFORM4IPROC)load("glUniform4i");
+      |                            ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1142:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1142 |         glad_glUniform1fv = (PFNGLUNIFORM1FVPROC)load("glUniform1fv");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1143:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1143 |         glad_glUniform2fv = (PFNGLUNIFORM2FVPROC)load("glUniform2fv");
+      |                             ^
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/glad.c:1144:29: warning: ISO C forbids conversion of object pointer to function pointer type [-Wpedantic]
+ 1144 |         glad_glUniform3fv = (PFNGLUNIFORM3FVPROC)load("glUniform3fv");
+
+[19/20] Building CXX object CMakeFiles/astro-sim.dir/external/imgui/imgui.cpp.obj
+ninja: build stopped: subcommand failed.
+Build complete!
+
+D:\Programming\C_Level\C++\Projects\HCK\Space\Test2\Space-Sandbox-Simulation\Space-Sandbox-Simulation>.\run.bat
+Starting build process...
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/build
+[1/12] Building CXX object CMakeFiles/astro-sim.dir/src/TextRenderer.cpp.obj
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/TextRenderer.cpp: In member function 'void TextRenderer::renderText(const std::string&, float, float, float, const glm::vec3&)':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/TextRenderer.cpp:282:24: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+  282 |         if (c < 0 || c > 127) continue;  // Skip non-ASCII characters
+      |                      ~~^~~~~
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/TextRenderer.cpp: In member function 'float TextRenderer::getTextWidth(const std::string&, float) const':
+D:/Programming/C_Level/C++/Projects/HCK/Space/Test2/Space-Sandbox-Simulation/Space-Sandbox-Simulation/src/TextRenderer.cpp:324:15: warning: unused variable 'c' [-Wunused-variable]
+  324 |     for (char c : text) {
+      |               ^
+[12/12] Linking CXX executable astro-sim.exe
+Build complete!
+Build completed successfully
+Starting build\astro-sim.exe...

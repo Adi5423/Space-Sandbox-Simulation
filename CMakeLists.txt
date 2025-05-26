@@ -81,9 +81,25 @@ target_link_libraries(astro-sim
     gdi32
 )
 
-# Add compiler warnings
+# Add compiler warnings and optimizations
 if(MSVC)
-    target_compile_options(astro-sim PRIVATE /W4)
+    target_compile_options(astro-sim PRIVATE /W4 /MP)
 else()
-    target_compile_options(astro-sim PRIVATE -Wall -Wextra -Wpedantic)
-endif() 
+    target_compile_options(astro-sim PRIVATE 
+        -Wall 
+        -Wextra 
+        -Wpedantic
+        -fmax-errors=100
+        -O2
+        -pipe
+        -fno-omit-frame-pointer
+    )
+    # Suppress pedantic warnings for glad.c
+    set_source_files_properties(src/glad.c PROPERTIES COMPILE_FLAGS "-Wno-pedantic")
+    # Set environment variable for increased memory limit
+    set(ENV{CFLAGS} "-fmax-errors=100")
+    set(ENV{CXXFLAGS} "-fmax-errors=100")
+endif()
+
+# Enable parallel compilation
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe") 
