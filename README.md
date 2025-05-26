@@ -18,7 +18,7 @@ Not implemented 1st 2nd and 4th
   - Trajectory plotting
 
 - **Customizable Interface**
-  - Dockable windows (see `demo_samples/dock_wind.png`)
+  - Dockable windows
   - Resizable panels
   - Tab-based organization
   - User-defined layouts
@@ -31,22 +31,27 @@ Not implemented 1st 2nd and 4th
 
 ## Demo Samples
 
-The project includes several demo samples showcasing different features:
+The project includes several demo samples showcasing different features. These images are located in the `demo_samples` directory of the repository.
 
-1. **Default Window** (`demo_samples/df_win.png`)
-   - Standard application layout
-   - Basic window configuration
-   - Default control placement
+### Default Window
+![Default Window](demo_samples/df_win.png)
+- Standard application layout
+- Basic window configuration
+- Default control placement
 
-2. **Dockable Windows** (`demo_samples/dock_wind.png`)
-   - Demonstrates docking system
-   - Panel arrangement examples
-   - Tab management
+### Dockable Windows
+![Dockable Windows](demo_samples/dock_wind.png)
+- Demonstrates docking system
+- Panel arrangement examples
+- Tab management
 
-3. **Customizable Windows** (`demo_samples/custom_wind.png`)
-   - Custom layout examples
-   - Theme variations
-   - Control panel configurations
+### Customizable Windows
+![Customizable Windows](demo_samples/custom_wind.png)
+- Custom layout examples
+- Theme variations
+- Control panel configurations
+
+> Note: If the images are not displaying, please ensure you have cloned the repository and are viewing the README from the local repository. The images are stored in the `demo_samples` directory.
 
 ## Getting Started
 
