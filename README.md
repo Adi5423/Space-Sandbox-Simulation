@@ -1,87 +1,92 @@
-# AstroSandbox
+# Space Sandbox Simulation
 
-A lightweight space simulation project that demonstrates basic orbital mechanics and 3D rendering using OpenGL. This project provides an interactive 3D environment for visualizing and experimenting with space physics concepts.
-
-## Demo Video
-
-Check out the [Coordinate System Demo](demo_samples/Coordinate%20System%20Demo.mp4) to see the project in action, showcasing the 3D coordinate system, camera controls, and basic rendering features.
-
-## Project Structure
-```
-Space-Sandbox-Simulation/
-├── build/           # Build output directory
-├── include/         # Header files
-├── lib/            # Libraries (GLFW, etc.)
-├── src/            # Source files
-├── shaders/        # GLSL shaders
-├── tests/          # Test files
-├── docs/           # Documentation
-├── fonts/          # Font files for text rendering
-└── demo_samples/   # Demo videos and screenshots
-```
+A modern C++ application for simulating celestial bodies and their interactions in a 3D space environment.
 
 ## Features
 
-- 3D coordinate system visualization
-- Interactive camera controls
-- Grid system with customizable dimensions
-- Text rendering support
-- Responsive window management
-- Delta time-based movement
-- Sprint functionality
-- Cursor toggle for better control
+- 🌌 3D space simulation with realistic physics
+- 🎮 Interactive controls and real-time parameter adjustment
+- 🖥️ Customizable, dockable user interface
+- 📊 Debug visualization and performance monitoring
+- 🎨 Modern OpenGL rendering with advanced effects
+- 🔧 Extensible architecture for custom components
 
-## Building and Running the Project
+## Screenshots
 
-### Windows
+[Add screenshots here]
+
+## Requirements
+
+- Windows 10 or later
+- Qt6 (6.9.0)
+- OpenGL 4.5+
+- MinGW-w64 compiler
+- CMake 3.10 or later
+
+## Quick Start
 
 1. Clone the repository:
-```bash
-git clone <repository-url>
-cd Space-Sandbox-Simulation
-```
+   ```bash
+   git clone https://github.com/yourusername/Space-Sandbox-Simulation.git
+   cd Space-Sandbox-Simulation
+   ```
 
-2. Build dependencies:
-```bash
-.\build_glfw.bat
-```
+2. Run the setup script to download dependencies:
+   ```bash
+   setup.bat
+   ```
 
 3. Build the project:
-```bash
-.\build.bat
+   ```bash
+   build.bat
+   ```
+
+4. Run the application:
+   ```bash
+   build/astro-sim.exe
+   ```
+
+## Project Structure
+
+```
+Space-Sandbox-Simulation/
+├── src/                    # Source files
+│   ├── gui/               # GUI components
+│   └── ...                # Other source files
+├── include/               # Header files
+├── external/              # External dependencies
+├── docs/                  # Documentation
+├── build/                 # Build directory
+├── CMakeLists.txt         # CMake configuration
+├── build.bat             # Build script
+└── setup.bat             # Setup script
 ```
 
-4. Run the simulation:
-```bash
-.\build\astro-sim.exe
-```
+## Documentation
 
-That's it! The project is now ready to run. All necessary dependencies are included in the repository.
+- [Project Overview](docs/ProjectOverview.md) - Detailed technical documentation
+- [User Guide](docs/UserGuide.md) - Usage instructions and features
+- [Development Guide](docs/DevelopmentGuide.md) - Development setup and guidelines
 
-## Controls
+## Features in Detail
 
-- WASD: Move forward/backward, strafe left/right
-- Space: Move up
-- Left Control: Move down
-- Q : Decrease Movement Speed
-- E : Increase Movement Speed
-- Left Shift: Hold to sprint (move faster)
-- Mouse: Look around (when cursor is hidden)
-- C: Toggle mouse cursor visibility
-- ESC: Exit
+### 3D Space Simulation
+- Realistic gravitational interactions
+- Orbital mechanics
+- Collision detection
+- Customizable physics parameters
 
-## Dependencies
+### User Interface
+- Dockable windows
+- Customizable layouts
+- Real-time controls
+- Debug visualization
 
-All dependencies are included in the repository:
-- GLFW 3.4
-- GLM
-- OpenGL 3.3+
-- GLAD
-- FreeType (for text rendering)
-
-## Development Progress
-
-See [PROGRESS.md](PROGRESS.md) for detailed development status and planned features.
+### Rendering System
+- Modern OpenGL implementation
+- Advanced shader effects
+- Efficient resource management
+- High-performance rendering pipeline
 
 ## Contributing
 
@@ -91,19 +96,24 @@ See [PROGRESS.md](PROGRESS.md) for detailed development status and planned featu
 4. Push to the branch
 5. Create a Pull Request
 
+## Known Issues
+
+- 3D viewport rendering issues in main window
+- Performance optimization needed for large simulations
+- Some UI elements need refinement
+
 ## License
 
-This project is licensed under the [MIT License](LICENSE.txt) - see the LICENSE file for details.
+[Your License]
 
-## Screenshots
+## Contact
 
-Here are some screenshots showcasing the project's features:
+[Your Contact Information]
 
-![3D Coordinate System View](demo_samples/Image_Sample-1.png)
-*3D Coordinate System with Grid*
+## Acknowledgments
 
-![Camera Movement Demo](demo_samples/Image_Sample-2.png)
-*Interactive Camera Movement*
-
-![Text Rendering Example](demo_samples/Image_Sample-3.png)
-*Text Rendering and UI Elements* 
+- Qt6 for the GUI framework
+- OpenGL for 3D rendering
+- GLM for mathematics
+- ImGui for debug UI
+- All contributors and supporters 
