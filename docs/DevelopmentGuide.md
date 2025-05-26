@@ -79,9 +79,21 @@ Space-Sandbox-Simulation/
 
 #### 4. GUI System
 - **MainWindow**: Main application window
+  - Default window layout (see `demo_samples/df_win.png`)
+  - Standard application interface
+  - Main rendering viewport
+  - Basic control panels
 - **OpenGLWidget**: OpenGL rendering widget
 - **DockableWindows**: Custom window system
+  - Dockable interface (see `demo_samples/dock_wind.png`)
+  - Resizable and movable panels
+  - Tab-based organization
+  - Custom docking zones
 - **ControlPanels**: UI control panels
+  - Customizable interface (see `demo_samples/custom_wind.png`)
+  - User-defined layouts
+  - Dynamic panel creation
+  - Theme support
 
 ## Development Workflow
 
@@ -250,4 +262,33 @@ cmake --build build
 - C++ documentation
 - OpenGL documentation
 - Qt documentation
-- Physics references 
+- Physics references
+
+## Demo Samples
+
+### GUI Demonstrations
+The project includes several demo samples showcasing different GUI features:
+
+1. **Default Window** (`demo_samples/df_win.png`)
+   - Standard application layout
+   - Basic window configuration
+   - Default control placement
+   - Reference implementation
+
+2. **Dockable Windows** (`demo_samples/dock_wind.png`)
+   - Demonstrates docking system
+   - Panel arrangement examples
+   - Tab management
+   - Layout persistence
+
+3. **Customizable Windows** (`demo_samples/custom_wind.png`)
+   - Custom layout examples
+   - Theme variations
+   - Control panel configurations
+   - User interface customization
+
+### Using Demo Samples
+- Reference images for UI development
+- Implementation examples
+- Layout guidelines
+- Design patterns 
