@@ -73,12 +73,17 @@ The project includes several demo samples showcasing different features. These i
 
 2. Run the setup script to download dependencies:
    ```bash
-   setup.bat
+   .\setup.bat
    ```
 
 3. Build the project:
    ```bash
-   build.bat
+   .\build.bat
+   ```
+
+4. Run the project:
+   ```bash
+   .\run.bat
    ```
 
 ## Documentation
