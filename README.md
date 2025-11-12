@@ -100,9 +100,6 @@ The project includes several demo samples showcasing different features. These i
 4. Push to the branch
 5. Create a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
@@ -111,3 +108,25 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - GLM for mathematics
 - GLFW for window management
 - ImGui for immediate mode GUI 
+
+
+---
+
+### 👨‍💻 About the Developer
+
+**Aditya Tiwari**
+- 💼 LinkedIn: [Aditya Tiwari](https://www.linkedin.com/in/adii5423/)
+- 🐱 GitHub: [GitHub Profile](https://github.com/adi5423)
+- 📧 Email: adii54ti23@gmail.com
+- 🐦 Twitter: [@Adii5423](https://twitter.com/Adii5423)
+- 📧 Instagram: [@Adii5423.exe](https://instagram.com/Adii5423)
+
+Contributing
+If you would like to contribute to this project, feel free to fork the repository and submit a pull request. Any contributions, suggestions, or improvements are welcome!
+
+---
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
